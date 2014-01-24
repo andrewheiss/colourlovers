@@ -1,18 +1,29 @@
-clQuery <- function(verb, query = NULL, format = 'xml'){
+clQuery <- function(type, subtype = NULL, query = NULL, fmt = 'xml', ...){
 	# API workhorse query function
-	if(!verb %in% c())
-		warning("API query verb not recognized")
-	url <- paste('http://www.colourlovers.com/api/',verb,sep="")
+	if(!type %in% c('colors', 'palettes', 'patterns', 'lovers', 'stats'))
+        warning("API type not recognized")
+	url <- paste('http://www.colourlovers.com/api/',type,sep="")
+    if(!is.null(subtype))
+        url <- paste(url,subtype,sep="/")
 	if(!is.null(query))
 		url <- paste(url,query,sep="/")
-    if(format=='xml'){
-        xml <- getURL(url, followlocation = 1L, ssl.verifypeer = 0L, ssl.verifyhost = 0L, ...)
-        # parse xml
-        return(xml)
-    } else if(format=='json'){
-        json <- getURL(url, followlocation = 1L, ssl.verifypeer = 0L, ssl.verifyhost = 0L, ...)
-        # parse json
-        return(json)
+    
+    if(is.null(fmt) || !fmt %in% c('xml','json'))
+        warning('fmt is missing or incorrect; xml used by default')
+
+    # handle parameters
+    url <- paste(url,'?format=',fmt,sep='')
+    
+    response <- getURL(url, followlocation = 1L, ...)
+    
+    
+    # handle json or xml
+    if(fmt == 'xml'){
+        out <- xmlToList(response)
+    } else if(fmt=='json'){
+        out <- fromJSON(response, simplify=FALSE)
     } else
-        stop("format must be 'xml' or 'json'")
+        out <- response
+    
+    return(out)
 }
