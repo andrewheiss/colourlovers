@@ -1,5 +1,5 @@
-\name{swatch}
-\alias{swatch}
+\name{clpng}
+\alias{clpng}
 \alias{plot.clcolor}
 \alias{plot.clcolors}
 \alias{plot.clpalette}
@@ -9,7 +9,7 @@
 \title{Plot a COLOURlovers object}
 \description{Plot a color, palette, or pattern PNG image in a plotting device}
 \usage{
-swatch(x, ...)
+clpng(x, ...)
 }
 \arguments{
   \item{x}{A colourlovers color, palette, or pattern object.}
@@ -22,14 +22,14 @@ swatch(x, ...)
 %\note{}
 %\seealso{}
 \examples{
-# plot a color swatch
+# plot a color clpng
 c <- clcolor(rgb(0,0,1), fmt='json')
 plot(c)
 
-# plot a pattern swatch
+# plot a pattern clpng
 p <- clpattern('1451', fmt='json')
 plot(p)
-swatch(p)
+clpng(p)
 
 \dontrun{
 # plot multiple palettes (interactively)

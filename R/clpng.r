@@ -1,5 +1,5 @@
-swatch <- function(x, ...){
-    # extract an imageUrl from a COLOURlovers object and print a swatch
+clpng <- function(x, ...){
+    # extract an imageUrl from a COLOURlovers object and print a clpng
     
     s1 <- inherits(x, 'clcolor') | inherits(x, 'clpalette') | inherits(x, 'clpattern')
     s2 <- inherits(x, 'clcolors') | inherits(x, 'clpalettes') | inherits(x, 'clpatterns')
@@ -35,9 +35,9 @@ swatch <- function(x, ...){
     return(invisible(x))
 }
 
-plot.clcolor <- function(x,...) swatch(x, ...)
-plot.clcolors <- function(x,...) swatch(x, ...)
-plot.clpalette <- function(x,...) swatch(x, ...)
-plot.clpalettes <- function(x,...) swatch(x, ...)
-plot.clpattern <- function(x,...) swatch(x, ...)
-plot.clpatterns <- function(x,...) swatch(x, ...)
+plot.clcolor <- function(x,...) clpng(x, ...)
+plot.clcolors <- function(x,...) clpng(x, ...)
+plot.clpalette <- function(x,...) clpng(x, ...)
+plot.clpalettes <- function(x,...) clpng(x, ...)
+plot.clpattern <- function(x,...) clpng(x, ...)
+plot.clpatterns <- function(x,...) clpng(x, ...)

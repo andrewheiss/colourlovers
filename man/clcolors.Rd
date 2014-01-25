@@ -30,7 +30,7 @@ clcolors('random')
 # get a single color
 clcolor('6B4106')
 
-# plot a single color swatch
+# plot a single color clpng
 c <- clcolor(rgb(0,0,1), fmt='json')
 plot(c)
 }
