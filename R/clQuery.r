@@ -1,4 +1,4 @@
-clQuery <- function(type, subtype = NULL, query = NULL, fmt = 'xml', ...){
+clquery <- function(type, subtype = NULL, query = NULL, fmt = 'xml', ...){
 	# API workhorse query function
 	if(!type %in% c('colors', 'palettes', 'patterns', 'lovers', 'stats'))
         warning("API type not recognized")
@@ -14,8 +14,10 @@ clQuery <- function(type, subtype = NULL, query = NULL, fmt = 'xml', ...){
     # handle parameters
     url <- paste(url,'?format=',fmt,sep='')
     
-    response <- getURL(url, followlocation = 1L, ...)
-    
+    #response <- getURL(url, followlocation = 1L, ...)
+    urlcon <- url(url)
+    response <- paste(readLines(urlcon, warn=FALSE), collapse='')
+    close(urlcon)
     
     # handle json or xml
     if(fmt == 'xml'){
