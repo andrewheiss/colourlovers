@@ -27,9 +27,9 @@ swatch <- function(x, ...){
     return(invisible(x))
 }
 
-plot.clcolor <- function(x,...) .swatch(x, ...)
-plot.clcolors <- function(x,...) .swatch(x, ...)
-plot.clpalette <- function(x,...) .swatch(x, ...)
-plot.clpalettes <- function(x,...) .swatch(x, ...)
-plot.clpattern <- function(x,...) .swatch(x, ...)
-plot.clpatterns <- function(x,...) .swatch(x, ...)
+plot.clcolor <- function(x,...) swatch(x, ...)
+plot.clcolors <- function(x,...) swatch(x, ...)
+plot.clpalette <- function(x,...) swatch(x, ...)
+plot.clpalettes <- function(x,...) swatch(x, ...)
+plot.clpattern <- function(x,...) swatch(x, ...)
+plot.clpatterns <- function(x,...) swatch(x, ...)

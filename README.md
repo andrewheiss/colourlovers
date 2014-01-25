@@ -21,6 +21,8 @@ install_github("leeper/colourlovers")
 
 The API functionality is broken down into five categories: colors, palettes, patterns, lovers, and statistics. The next sections provide examples of each.
 
+Note that the `clcolor`, `clcolors`, `clpalette`, `clpalettes`, `clpattern`, and `clpatterns` functions all have S3 `plot` methods. These methods produce simple plots of colors, palettes, and patterns using `rasterImage` (and the `png::readPNG`).
+
 ### Get Colors ###
 
 Two functions retrieve information about individual colors from COLOURlovers. The first, `clcolors` (in plural form), searches for colors according a number of named attributes.
@@ -59,7 +61,8 @@ Two functions are provided for using palettes. One, `clpalettes` (in plural form
 The other function, `clpalette` (in singular form), retrieves a pattern by its identifying number.
 
 ```
-clpalette('113451')
+palette1 <- clpalette('113451')
+plot(palette1)
 ```
 
 Here's an example of the image URL at work (credit "Anaconda" (113451) by kunteper):
@@ -82,7 +85,8 @@ clpatterns('top')
 The other function, `clpattern` (in singular form), retrieves a pattern by its identifying number.
 
 ```
-clpattern('1451')
+pattern1 <- clpattern('1451')
+plot(pattern1)
 ```
 
 The response includes the creator's username, COLOURlovers ratings (views, votes, comments, hearts, and rank), the palette of colors (in hexidecimal representation) used in the pattern, and URLs for the images of the pattern.
