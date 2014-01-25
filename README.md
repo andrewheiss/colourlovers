@@ -31,6 +31,19 @@ The API functionality is broken down into five categories: colors, palettes, pat
 
 ### Get Statistics ###
 
+**colourlovers** provides a function, `clstats`, to return basic counts of available colors, palettes, patterns, and lovers. There is no obvious R application for this information, but is provided for the sake of completeness.
+
+```
+> clstats('colors')
+Total colors: 7207630
+> clstats('palettes')
+Total palettes: 3217973
+> clstats('patterns')
+Total patterns: 4106345
+> clstats('lovers')
+Total lovers: 4116021
+```
 
 ## Using colourlovers in R graphics ##
 
+COMING SOON
