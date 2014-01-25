@@ -4,7 +4,7 @@ Date: 2014-01-25
 Title: R client for the COLOURlovers API
 Author: Thomas J. Leeper
 Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
-Imports: XML, RJSONIO
+Imports: XML, RJSONIO, png
 Description: Provides access to the COLOURlovers API, which provides color inspiration and color palettes.
 License: GPL-2
 URL: https://github.com/leeper/colourlovers
