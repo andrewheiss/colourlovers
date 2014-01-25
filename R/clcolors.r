@@ -2,6 +2,7 @@ clcolor <- function(hex, fmt='xml', ...){
     # request a single color
     out <- clquery('color', hex, fmt=fmt, ...)
     class(out) <- c('clcolor',class(out))
+    return(out)
 }
 
 
@@ -14,4 +15,5 @@ clcolors <- function(type=NULL, query = NULL, fmt='xml', ...){
     else
         out <- clquery('colors', type, fmt=fmt, ...)
     class(out) <- c('clcolor',class(out))
+    return(out)
 }

@@ -2,6 +2,7 @@ cllover <- function(user, fmt='xml', ...){
     # request a single lover
     out <- clquery('lover', user, fmt=fmt, ...)
     class(out) <- c('cllover',class(out))
+    return(out)
 }
 
 cllovers <- function(type=NULL, query = NULL, fmt='xml', ...){
@@ -13,4 +14,5 @@ cllovers <- function(type=NULL, query = NULL, fmt='xml', ...){
     else
         out <- clquery('lovers', type, fmt=fmt, ...)
     class(out) <- c('cllover',class(out))
+    return(out)
 }

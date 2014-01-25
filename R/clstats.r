@@ -3,5 +3,6 @@ clstats <- function(type, fmt='xml', ...){
         stop("type must be 'colors', 'palettes', 'patterns', or 'lovers'")
     out <- clquery('stats', type, fmt=fmt, ...)
     class(out) <- c('clstats',class(out))
+    return(out)
 }
 

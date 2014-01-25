@@ -2,6 +2,7 @@ clpattern <- function(id, fmt='xml', ...){
     # request a single pattern
     out <- clquery('pattern', id, fmt=fmt, ...)
     class(out) <- c('clpattern',class(out))
+    return(out)
 }
 
 clpatterns <- function(type=NULL, query = NULL, fmt='xml', ...){
@@ -13,4 +14,5 @@ clpatterns <- function(type=NULL, query = NULL, fmt='xml', ...){
     else
         out <- clquery('patterns', type, fmt=fmt, ...)
     class(out) <- c('clpattern',class(out))
+    return(out)
 }

@@ -2,6 +2,7 @@ clpalette <- function(id, fmt='xml', ...){
     # request a single palette
     out <- clquery('palette', id, fmt=fmt, ...)
     class(out) <- c('clpalette',class(out))
+    return(out)
 }
 
 clpalettes <- function(type=NULL, query = NULL, fmt='xml', ...){
@@ -13,4 +14,5 @@ clpalettes <- function(type=NULL, query = NULL, fmt='xml', ...){
     else
         out <- clQuery('palettes', type, fmt=fmt, ...)
     class(out) <- c('clpalette',class(out))
+    return(out)
 }
