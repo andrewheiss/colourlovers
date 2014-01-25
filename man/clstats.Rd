@@ -4,12 +4,11 @@
 \title{Retrieve basic statistics from COLOURlovers.}
 \description{Retrieve basic statistics from the COLOURlovers API.}
 \usage{
-clQuery(type, fmt = 'xml', ...)
+clstats(type, fmt = 'xml')
 }
 \arguments{
   \item{type}{An API type. One of \dQuote{colors}, \dQuote{palettes}, \dQuote{patterns}, or \dQuote{lovers}.}
   \item{fmt}{A format for the API response, one of \dQuote{xml} (the default) or \dQuote{json}. This has essentially no effect on function behavior.}
-  \item{...}{Ignored.}
 }
 \details{Retrieve total numbers of colors, palettes, patterns, or lovers.}
 \value{A list of class \dQuote{clstats} containing at least one named element (\dQuote{total}). This should be the same regardless of the value of \code{fmt}.}
