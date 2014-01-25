@@ -46,24 +46,20 @@ cllovers <- function(set = NULL, ..., fmt = 'xml'){
 }
 
 print.cllover <- function(x,...) {
-    onelover <- function(z){
-        cat('Lover username:     ', z$userName[[1]],'\n')
-        cat('Registered:         ', z$dateRegistered,'\n')
-        cat('Last active:        ', z$dateLastActive,'\n')
-        cat('Rating:             ', z$rating,'\n')
-        cat('Location:           ', z$location[[1]],'\n')
-        cat('Colors:             ', z$numColors,'\n')
-        cat('Palettes:           ', z$numPalettes,'\n')
-        cat('Patterns:           ', z$numPatterns,'\n')
-        cat('Comments made:      ', z$numCommentsMade,'\n')
-        cat('Lovers:             ', z$numLovers,'\n')
-        cat('Comments on profile:', z$numCommentsOnProfile,'\n')
-        cat('URL:                ', z$url[[1]],'\n')
-        cat('API URL:            ', z$apiUrl[[1]],'\n')
-        cat('\n')
-    }
-    for(i in which(names(x)=='lover'))
-        onelover(x[[i]])
+    cat('Lover username:     ', x$userName[[1]],'\n')
+    cat('Registered:         ', x$dateRegistered,'\n')
+    cat('Last active:        ', x$dateLastActive,'\n')
+    cat('Rating:             ', x$rating,'\n')
+    cat('Location:           ', x$location[[1]],'\n')
+    cat('Colors:             ', x$numColors,'\n')
+    cat('Palettes:           ', x$numPalettes,'\n')
+    cat('Patterns:           ', x$numPatterns,'\n')
+    cat('Comments made:      ', x$numCommentsMade,'\n')
+    cat('Lovers:             ', x$numLovers,'\n')
+    cat('Comments on profile:', x$numCommentsOnProfile,'\n')
+    cat('URL:                ', x$url[[1]],'\n')
+    cat('API URL:            ', x$apiUrl[[1]],'\n')
+    cat('\n')
     invisible(x)
 }
 
