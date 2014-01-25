@@ -4,7 +4,6 @@
 \docType{package}
 \title{R client for the COLOURlovers API}
 \description{Provides access to the COLOURlovers API for accessing colors and color palettes for use in R graphics.}
-}
 \author{
 Thomas J. Leeper
 
