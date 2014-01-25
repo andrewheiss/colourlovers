@@ -24,6 +24,11 @@ cllovers(set = NULL, ..., fmt = 'xml')
 %\note{}
 %\seealso{}
 \examples{
+# retrieve top users
+cllovers(set='top', fmt='json')
+
+# retrieve a single user
+cllover('COLOURlovers', fmt='json')
 }
 %\keyword{ ~kwd1 }
 %\keyword{ ~kwd2 }
