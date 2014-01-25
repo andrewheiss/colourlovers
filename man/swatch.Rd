@@ -22,8 +22,12 @@ swatch(x, ...)
 %\note{}
 %\seealso{}
 \examples{
-pid <- '1451'
-p <- clpattern(pid, fmt='json')
+# plot a color swatch
+c <- clcolor(rgb(0,0,1), fmt='json')
+plot(c)
+
+# plot a pattern swatch
+p <- clpattern('1451', fmt='json')
 plot(p)
 swatch(p)
 }
