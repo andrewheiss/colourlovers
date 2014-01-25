@@ -29,7 +29,7 @@ clpalettes(set = NULL, ..., fmt = 'xml')
 clpalettes('random')
 
 # download top palettes
-clpalette('top', fmt='json')
+clpalettes('top', fmt='json')
 
 # plot at a single palette
 pid <- '113451'
