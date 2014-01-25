@@ -9,7 +9,7 @@ swatch <- function(x, ...){
         x <- x[[1]]
         u <- x$imageUrl
     }
-    download.file(p$imageUrl, tmp <- tempfile(), mode='wb')
+    download.file(u, tmp <- tempfile(), mode='wb')
     if(inherits(x, 'clcolors'))
         m <- paste('Color #',x$id,sep='')
     else if(inherits(x, 'clpalette'))
