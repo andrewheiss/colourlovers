@@ -58,7 +58,9 @@ Palettes are sets of colors created by COLOURlovers users. They show potentially
 Two functions are provided for using palettes. One, `clpalettes` (in plural form), searches for palettes by user, hue(s), color(s) (in hexidecimal representation), or keyword(s).
 
 ```
-clpalettes('top')
+top <- clpalettes('top')
+# plot all top palettes (interactively)
+plot(top)
 ```
 
 
