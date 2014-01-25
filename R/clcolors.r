@@ -101,7 +101,7 @@ print.clcolor <- function(x,...) {
     cat('Rank:           ', x$rank,'\n')
     cat('URL:            ', x$url,'\n')
     cat('Image URL:      ', x$imageURL,'\n')
-    cat('Colors:         ', paste('#',hex,sep=''),'\n')
+    cat('Colors:         ', paste('#',x$hex,sep=''),'\n')
     cat('\n')
     invisible(x)
 }
