@@ -30,6 +30,12 @@ plot(c)
 p <- clpattern('1451', fmt='json')
 plot(p)
 swatch(p)
+
+\dontrun{
+# plot multiple palettes (interactively)
+p <- clpalettes('top', fmt='json')
+plot(p)
+}
 }
 %\keyword{ ~kwd1 }
 %\keyword{ ~kwd2 }
