@@ -1,13 +1,14 @@
 swatch <- function(x, ...){
     # extract an imageUrl from a COLOURlovers object and print a swatch
     
-    s <- inherits(x, 'clcolor') | inherits(x, 'clpalette') | inherits(x, 'clpattern')
-    if(s) {
+    s1 <- inherits(x, 'clcolor') | inherits(x, 'clpalette') | inherits(x, 'clpattern')
+    s2 <- inherits(x, 'clcolors') | inherits(x, 'clpalettes') | inherits(x, 'clpatterns')
+    if(s1) {
         u <- x$imageUrl
-    } else {
-        warning("Object has multiple images. First is used.")
-        x <- x[[1]]
-        u <- x$imageUrl
+    } else if(s2){
+        par(ask=TRUE)
+        sapply(x, plot)
+        return(invisible(x))
     }
     download.file(u, tmp <- tempfile(), mode='wb')
     if(inherits(x, 'clcolors'))
