@@ -26,26 +26,34 @@ clquery <- function(type, set = NULL, query = NULL, fmt = 'xml', ...){
     
     # handle json or xml
     if(fmt == 'xml'){
-        out <- xmlToList(x, addAttributes=FALSE)
-        fixxml <- function(z){
-            p <- xmlParse(x)
+        out <- xmlToList(response, addAttributes=FALSE)
+        p <- xmlParse(response)
+        fixxml <- function(z, x){
             if('title' %in% names(z))
-                z$title <- xpathApply(p,'//title', xmlValue)[[1]]
+                z$title <- xmlValue(xmlChildren(x)$title)
             if('userName' %in% names(z))
-                z$userName <- xpathApply(p,'//userName', xmlValue)[[1]]
+                z$userName <- xmlValue(xmlChildren(x)$userName)
             if('description' %in% names(z))
-                z$description <- xpathApply(p,'//description', xmlValue)[[1]]
+                z$description <- xmlValue(xmlChildren(x)$description)
             if('url' %in% names(z))
-                z$url <- xpathApply(p,'//url', xmlValue)[[1]]
+                z$url <- xmlValue(xmlChildren(x)$url)
             if('imageUrl' %in% names(z))
-                z$imageUrl <- xpathApply(p,'//imageUrl', xmlValue)[[1]]
+                z$imageUrl <- xmlValue(xmlChildren(x)$imageUrl)
             if('badgeUrl' %in% names(z))
-                z$badgeUrl <- xpathApply(p,'//badgeUrl', xmlValue)[[1]]
+                z$badgeUrl <- xmlValue(xmlChildren(x)$badgeUrl)
             #if('template' %in% names(z))
             #    z$template <- NULL
             return(z)
         }
-        out <- lapply(out, fixxml)
+        if(type %in% c('color','colors'))
+            out <- mapply(fixxml, out, xpathApply(p,'//color'), SIMPLIFY=FALSE)
+        if(type %in% c('palette','palettes'))
+            out <- mapply(fixxml, out, xpathApply(p,'//palette'), SIMPLIFY=FALSE)
+        if(type %in% c('pattern','patterns'))
+            out <- mapply(fixxml, out, xpathApply(p,'//pattern'), SIMPLIFY=FALSE)
+        if(type %in% c('lover','lovers'))
+            out <- mapply(fixxml, out, xpathApply(p,'//lover'), SIMPLIFY=FALSE)
+        
     } else if(fmt=='json'){
         out <- fromJSON(response, simplify=FALSE)
     } else
