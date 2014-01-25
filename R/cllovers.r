@@ -1,6 +1,6 @@
 cllover <- function(user, comments = FALSE, fmt = 'xml'){
     # request a single lover/user
-    out <- list(lover=clquery('lover', user, query=list(comments=as.numeric(comments)), fmt=fmt)[[1]])
+    out <- list(lover=clquery('lover', user, query=list(comments=as.numeric(comments)), fmt=fmt)[[1]])[[1]]
     class(out) <- c('cllover',class(out))
     return(out)
 }
@@ -39,7 +39,9 @@ cllovers <- function(set = NULL, ..., fmt = 'xml'){
     
     out <- clquery('lovers', set, query=NULL, fmt=fmt)
     names(out) <- rep('lover',length(out))
-    class(out) <- c('cllover',class(out))
+    class(out) <- c('cllovers',class(out))
+    for(i in 1:length(out))
+        class(out[[i]]) <- c('cllover',class(out))
     return(out)
 }
 
@@ -64,3 +66,5 @@ print.cllover <- function(x,...) {
         onelover(x[[i]])
     invisible(x)
 }
+
+print.cllovers <- function(x,...) sapply(x, print)
