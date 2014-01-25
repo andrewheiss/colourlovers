@@ -26,6 +26,5 @@ clquery <- function(type, subtype = NULL, query = NULL, fmt = 'xml', ...){
         out <- fromJSON(response, simplify=FALSE)
     } else
         out <- response
-    
     return(out)
 }

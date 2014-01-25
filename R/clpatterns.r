@@ -1,6 +1,7 @@
 clpattern <- function(id, fmt='xml', ...){
     # request a single pattern
-    clQuery('pattern', id, fmt=fmt, ...)
+    out <- clquery('pattern', id, fmt=fmt, ...)
+    class(out) <- c('clpattern',class(out))
 }
 
 clpatterns <- function(type=NULL, query = NULL, fmt='xml', ...){
@@ -8,7 +9,8 @@ clpatterns <- function(type=NULL, query = NULL, fmt='xml', ...){
     if(!is.null(type) && !type %in% c('new', 'top', 'random'))
         stop("type must be 'new', 'top', or 'random'")
     if(type=='random') # no query parameters allowed
-        clQuery('patterns', type, fmt=fmt, ...)
+        out <- clquery('patterns', type, fmt=fmt, ...)
     else
-        clQuery('patterns', type, fmt=fmt, ...)
+        out <- clquery('patterns', type, fmt=fmt, ...)
+    class(out) <- c('clpattern',class(out))
 }
