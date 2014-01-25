@@ -23,13 +23,78 @@ The API functionality is broken down into five categories: colors, palettes, pat
 
 ### Get Colors ###
 
+Two functions retrieve information about individual colors from COLOURlovers. The first, `clcolors` (in plural form), searches for colors according a number of named attributes.
+
+```
+clcolors('top')
+```
+
+The second function, `clcolor` (in singular form), retrieves information about a single color based on its six-character hexidecimal representation.
+
+```
+clcolor('6B4106')
+```
+
+`clcolor` automatically removes leading hashes (`#`) and trailing alpha-transparency values, allowing colors returned **grDevices** functions to be passed directly to `clcolor`. For example:
+
+```
+clcolor(hsv(.5,.5,.5))
+clcolor(rgb(0, 1, 0, .5))
+clcolor(gray(.5))
+```
+
+The response includes RGB and HSV representations of the requested color, a URL for for an image of the color, and COLOURlovers ratings (views, votes, comments, hearts, and rank) for the color.
+
+Here's an example of the image URL at work):
+
+[![Primary Green #00FF00](http://www.colourlovers.com/img/00FF00/100/100/Primary_Green.png)](http://www.colourlovers.com/img/00FF00/100/100/Primary_Green.png)
+
 ### Get Palettes ###
+
+Palettes are sets of colors created by COLOURlovers users. They show potentially attractive combinations of colors, and are the most useful aspect of the COLOURlovers API in an R context.
+
+Two functions are provided for using palettes. One, `clpalettes` (in plural form), searches for palettes by user, hue(s), color(s) (in hexidecimal representation), or keyword(s).
+
+
+The other function, `clpalette` (in singular form), retrieves a pattern by its identifying number.
+
+```
+clpalette('113451')
+```
+
+Here's an example of the image URL at work (credit "Anaconda" (113451) by kunteper):
+
+[![Anaconda (113451) by kunteper](http://www.colourlovers.com/paletteImg/2B2D42/7A7D7F/B1BBCF/6E0B21/9B4D73/Anaconda.png)](http://www.colourlovers.com/paletteImg/2B2D42/7A7D7F/B1BBCF/6E0B21/9B4D73/Anaconda.png)
+
+
+
 
 ### Get Patterns (Designs) ###
 
+Patterns are images created on COLOURlovers using a specified palette of colors. They serve as examples of how to use the palette in practice.
+
+Two functions are provided for using patterns. One, `clpatterns` (in plural form), searches for patterns according to user, hue(s), color(s) (in hexidecimal representation), or keyword(s).
+
+```
+clpatterns('top')
+```
+
+The other function, `clpattern` (in singular form), retrieves a pattern by its identifying number.
+
+```
+clpattern('1451')
+```
+
+The response includes the creator's username, COLOURlovers ratings (views, votes, comments, hearts, and rank), the palette of colors (in hexidecimal representation) used in the pattern, and URLs for the images of the pattern.
+
+Here's an example of the image URL at work (credit "Geek Chic" (1451) by _183):
+
+[![Geek Chic (1451) by _183](http://colourlovers.com.s3.amazonaws.com/images/patterns/1/1451.png)](http://colourlovers.com.s3.amazonaws.com/images/patterns/1/1451.png)
+
+
 ### Get Lovers (Users) ###
 
-**colourlovers** provides two functions for viewing information about COLOURlovers use. One, `cllovers` (in plural form), serves as a limited search function for identifying users. The function provides an argument `set` to identify "new" or "top"-rated users, sorted by one or more attributes.
+Two functions are provided for viewing information about COLOURlovers use. One, `cllovers` (in plural form), serves as a limited search function for identifying users. The function provides an argument `set` to identify "new" or "top"-rated users, sorted by one or more attributes.
 
 ```
 > cllovers(set='top', fmt='json')
