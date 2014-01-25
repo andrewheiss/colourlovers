@@ -61,6 +61,8 @@ Two functions are provided for using palettes. One, `clpalettes` (in plural form
 top <- clpalettes('top')
 # plot all top palettes (interactively)
 plot(top)
+# extract color swatches from new palettes
+swatch(top)
 ```
 
 
@@ -68,6 +70,7 @@ The other function, `clpalette` (in singular form), retrieves a pattern by its i
 
 ```
 palette1 <- clpalette('113451')
+# plot the palette
 plot(palette1)
 ```
 
@@ -92,7 +95,10 @@ The other function, `clpattern` (in singular form), retrieves a pattern by its i
 
 ```
 pattern1 <- clpattern('1451')
+# plot the pattern
 plot(pattern1)
+# extract colors from the pattern
+swatch(pattern1)
 ```
 
 The response includes the creator's username, COLOURlovers ratings (views, votes, comments, hearts, and rank), the palette of colors (in hexidecimal representation) used in the pattern, and URLs for the images of the pattern.
