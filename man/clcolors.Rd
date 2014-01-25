@@ -2,6 +2,7 @@
 \alias{clcolor}
 \alias{clcolors}
 \alias{print.clcolor}
+\alias{print.clcolors}
 \title{Retrieve color or colors}
 \description{Retrieve a color or set of colors from the COLOURlovers API.}
 \usage{

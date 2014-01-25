@@ -2,6 +2,7 @@
 \alias{cllover}
 \alias{cllovers}
 \alias{print.cllover}
+\alias{print.cllovers}
 \title{Retrieve a user (lover)}
 \description{Retrieve a lover (user) or set of lovers from the COLOURlovers API.}
 \usage{

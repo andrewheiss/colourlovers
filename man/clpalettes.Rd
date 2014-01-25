@@ -2,6 +2,7 @@
 \alias{clpalette}
 \alias{clpalettes}
 \alias{print.clpalette}
+\alias{print.clpalettes}
 \title{Retrieve color palette or palettes}
 \description{Retrieve a color palette or set of palletes from the COLOURlovers API.}
 \usage{

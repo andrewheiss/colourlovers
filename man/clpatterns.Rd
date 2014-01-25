@@ -2,6 +2,7 @@
 \alias{clpattern}
 \alias{clpatterns}
 \alias{print.clpattern}
+\alias{print.clpatterns}
 \title{Retrieve pattern or patterns}
 \description{Retrieve a pattern or set of patterns from the COLOURlovers API.}
 \usage{
