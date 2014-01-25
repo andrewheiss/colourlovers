@@ -1,6 +1,6 @@
 clpattern <- function(id, fmt='xml'){
     # request a single pattern
-    out <- clquery('pattern', id, fmt=fmt)
+    out <- clquery('pattern', id, fmt=fmt)[[1]]
     class(out) <- c('clpattern',class(out))
     return(out)
 }
@@ -9,12 +9,16 @@ clpatterns <- function(set = NULL, ..., fmt='xml'){
     # request multiple patterns
     if(!is.null(set) && !set %in% c('new', 'top', 'random'))
         stop("set must be 'new', 'top', or 'random', or NULL")
-    if(set=='random') {
-        out <- clquery('patterns', set, query=NULL, fmt=fmt)
+    query <- list(...)
+    if(length(query)==0)
+        query <- NULL
+    if(!is.null(set) && set=='random') {
+        out <- clquery('patterns', set, query=NULL, fmt=fmt)[[1]]
         if(!is.null(query))
             warning("query parameters ignored for 'random' patterns")
-    } else {        
-        query <- list(...)
+        class(out) <- c('clpattern',class(out))
+            return(out)
+    } else {
         query <- query[!sapply(query, is.null)]
         query <- query[-which(names(query)=='')]
         allowed <- c('lover','hueOption','hex','hex_logic','keywords',
@@ -34,7 +38,7 @@ clpatterns <- function(set = NULL, ..., fmt='xml'){
                         'hex values supplied, only first five used.'))
                 query$hex <- query$hex[1:5]
             }
-            query$hex <- paste(query$hex,sep=',')
+            query$hex <- paste(substring(gsub('#','',query$hex),1,6),sep=',')
         }
         if('hex_logic' %in% n){
             query$hex_logic <- toupper(query$hex_logic)
@@ -79,11 +83,30 @@ clpatterns <- function(set = NULL, ..., fmt='xml'){
         }
         out <- clquery('patterns', set, query=query, fmt=fmt)
     }
-    class(out) <- c('clpattern',class(out))
+    class(out) <- c('clpatterns',class(out))
+    for(i in 1:length(out))
+        class(out[[i]]) <- c('clpattern',class(out))
     return(out)
 }
 
-
 print.clpattern <- function(x,...) {
-    x
+    cat('Pattern ID:     ', x$id,'\n')
+    cat('Title:          ', x$title,'\n')
+    #cat('Description:    ', x$description,'\n')
+    cat('Created by user:', x$userName,'\n')
+    cat('Date created:   ', x$dateCreated,'\n')
+    cat('Views:          ', x$numViews,'\n')
+    cat('Votes:          ', x$numVotes,'\n')
+    cat('Comments:       ', x$numComments,'\n')
+    cat('Hearts:         ', x$numHearts,'\n')
+    cat('Rank:           ', x$rank,'\n')
+    cat('URL:            ', x$url,'\n')
+    cat('Image URL:      ', x$imageURL,'\n')
+    cols <- paste(paste('#',unlist(x$colors),sep=''),collapse=', ')
+    cat('Colors:         ', cols,'\n')
+    cat('\n')
+    invisible(x)
 }
+
+print.clpatterns <- function(x,...)
+    sapply(x, print)
