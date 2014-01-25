@@ -23,6 +23,15 @@ clcolors(set = NULL, ..., fmt = 'xml')
 %\note{}
 %\seealso{}
 \examples{
+# get a random color
+clcolors('random')
+
+# get a single color
+clcolor('6B4106')
+
+# plot a single color swatch
+c <- clcolor(rgb(0,0,1), fmt='json')
+plot(c)
 }
 %\keyword{ ~kwd1 }
 %\keyword{ ~kwd2 }

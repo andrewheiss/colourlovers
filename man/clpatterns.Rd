@@ -23,6 +23,12 @@ clpatterns(set = NULL, ..., fmt = 'xml')
 %\note{}
 %\seealso{}
 \examples{
+# get a random pattern
+clpatterns('random')
+
+# plot at a single pattern
+p <- clpattern('1451', fmt='json')
+plot(p)
 }
 %\keyword{ ~kwd1 }
 %\keyword{ ~kwd2 }

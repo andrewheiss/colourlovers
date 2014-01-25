@@ -24,6 +24,16 @@ clpalettes(set = NULL, ..., fmt = 'xml')
 %\note{}
 %\seealso{}
 \examples{
+# get a random palette
+clpalettes('random')
+
+# download top palettes
+clpalette('top', fmt='json')
+
+# plot at a single palette
+pid <- '113451'
+p <- clpalette(pid, fmt='json')
+plot(p)
 }
 %\keyword{ ~kwd1 }
 %\keyword{ ~kwd2 }
