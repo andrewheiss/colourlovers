@@ -55,7 +55,7 @@ clpie <- function(x, ...){
         return(invisible(x))
     } else if(s2){
         par(mar=c(1,1,2,1), ask=TRUE)
-        sapply(x, plot)
+        sapply(x, plot, type='plot')
         return(invisible(x))
     }
 }
