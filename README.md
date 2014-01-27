@@ -23,7 +23,7 @@ install_github("leeper/colourlovers")
 
 The API functionality is broken down into five categories: colors, palettes, patterns, lovers, and statistics. The next sections provide examples of each.
 
-Note that the `clcolor`, `clcolors`, `clpalette`, `clpalettes`, `clpattern`, and `clpatterns` functions all have S3 `plot` methods. These methods produce simple plots of colors, palettes, and patterns using `rasterImage` (and the `png::readPNG`).
+Note that the `clcolor`, `clcolors`, `clpalette`, `clpalettes`, `clpattern`, and `clpatterns` functions all have S3 `plot` methods. These methods produce either simple plots of colors, palettes, and patterns using `rasterImage` (and the `png::readPNG`) or a pie chart of the returned color values (e.g., `plot(obj, type='pie')`).
 
 Additionally the `swatch` function extracts colors returned by any of those functions to make them easily usable in subsequent graphics calls. For example:
 
@@ -105,6 +105,8 @@ Two functions are provided for using palettes. One, `clpalettes` (in plural form
 top <- clpalettes('top')
 # plot all top palettes (interactively)
 plot(top)
+# plot them all as pie charts of the included colors
+plot(top, type='pie')
 # extract color swatches from new palettes
 swatch(top)
 ```
