@@ -14,7 +14,7 @@ clpng <- function(x, ...){
             par(mar=c(2,1,2,1), ask=TRUE)
         else
             par(mar=c(1,1,2,1), ask=TRUE)
-        sapply(x, plot)
+        sapply(x, clpng)
         return(invisible(x))
     }
     tmp <- tempfile()
@@ -55,7 +55,7 @@ clpie <- function(x, ...){
         return(invisible(x))
     } else if(s2){
         par(mar=c(1,1,2,1), ask=TRUE)
-        sapply(x, plot, type='plot')
+        sapply(x, clpie)
         return(invisible(x))
     }
 }
