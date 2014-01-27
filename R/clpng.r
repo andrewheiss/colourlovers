@@ -41,7 +41,7 @@ clpie <- function(x, ...){
     s1 <- inherits(x, 'clcolor') | inherits(x, 'clpalette') | inherits(x, 'clpattern')
     s2 <- inherits(x, 'clcolors') | inherits(x, 'clpalettes') | inherits(x, 'clpatterns')
     if(s1) {
-        u <- swatch(x)
+        u <- swatch(x)[[1]]
         par(mar=c(1,1,2,1))    
         if(inherits(x, 'clcolor'))
             m <- paste('Color #',x$hex,sep='')
@@ -51,7 +51,7 @@ clpie <- function(x, ...){
             m <- paste('Pattern #',x$id,sep='')
         else
             m <- ''
-        pie(1:2, labels=u, border=NA, col=u, main=m)
+        pie(rep(1,length(u)), labels=u, border=NA, col=u, main=m)
         return(invisible(x))
     } else if(s2){
         par(mar=c(1,1,2,1), ask=TRUE)
