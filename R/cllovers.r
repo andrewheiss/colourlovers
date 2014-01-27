@@ -11,7 +11,6 @@ cllovers <- function(set = NULL, ..., fmt = 'xml'){
         stop("type must be 'new' or 'top'")
     query <- list(...)
     query <- query[!sapply(query, is.null)]
-    query <- query[-which(names(query)=='')]
     allowed <- c('orderCol','sortBy','numResults','resultOffset')
     query[which(!names(query) %in% allowed)] <- NULL
     n <- names(query)

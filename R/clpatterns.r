@@ -20,7 +20,6 @@ clpatterns <- function(set = NULL, ..., fmt='xml'){
             return(out)
     } else {
         query <- query[!sapply(query, is.null)]
-        query <- query[-which(names(query)=='')]
         allowed <- c('lover','hueOption','hex','hex_logic','keywords',
                      'keywordsExact','orderCol','sortBy','numResults',
                      'resultOffset')
