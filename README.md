@@ -25,18 +25,56 @@ The API functionality is broken down into five categories: colors, palettes, pat
 
 Note that the `clcolor`, `clcolors`, `clpalette`, `clpalettes`, `clpattern`, and `clpatterns` functions all have S3 `plot` methods. These methods produce simple plots of colors, palettes, and patterns using `rasterImage` (and the `png::readPNG`).
 
+Additionally the `swatch` function extracts colors returned by any of those functions to make them easily usable in subsequent graphics calls. For example:
+
+```
+> swatch(clcolors('random'))
+[[1]]
+[1] "#77EB58"
+
+> swatch(clpalettes('random'))
+[[1]]
+[1] "#F7EBC6" "#D9CCA7" "#AD668F" "#6E437A" "#701E4D"
+```
+
 ### Get Colors ###
 
 Two functions retrieve information about individual colors from COLOURlovers. The first, `clcolors` (in plural form), searches for colors according a number of named attributes.
 
 ```
-clcolors('top')
+> clcolors('top')
+> clcolors('top')
+Pattern ID:      14 
+Title:           Black 
+Created by user: ninjascience 
+Date created:    2004-12-17 08:36:26 
+Views:           112010 
+Votes:           1263 
+Comments:        1756 
+Hearts:          4.5 
+Rank:            1 
+URL:             http://www.colourlovers.com/color/000000/Black 
+Image URL:       
+Colors:          #000000 
+...
 ```
 
 The second function, `clcolor` (in singular form), retrieves information about a single color based on its six-character hexidecimal representation.
 
 ```
-clcolor('6B4106')
+> clcolor('6B4106')
+Pattern ID:      903893 
+Title:           wet dirt 
+Created by user: jessicabrown 
+Date created:    2008-03-17 11:22:21 
+Views:           323 
+Votes:           1 
+Comments:        0 
+Hearts:          0 
+Rank:            0 
+URL:             http://www.colourlovers.com/color/6B4106/wet_dirt 
+Image URL:       
+Colors:          #6B4106
 ```
 
 `clcolor` automatically removes leading hashes (`#`) and trailing alpha-transparency values, allowing colors returned **grDevices** functions to be passed directly to `clcolor`. For example:
@@ -49,7 +87,11 @@ clcolor(gray(.5))
 
 The response includes RGB and HSV representations of the requested color, a URL for for an image of the color, and COLOURlovers ratings (views, votes, comments, hearts, and rank) for the color.
 
-Here's an example of the image URL at work):
+Here's an example of the image URL at work, using the `plot` method for a `clcolor` object:
+
+```
+plot(clcolor('00FF00'))
+```
 
 [![Primary Green #00FF00](http://www.colourlovers.com/img/00FF00/100/100/Primary_Green.png)](http://www.colourlovers.com/img/00FF00/100/100/Primary_Green.png)
 
@@ -90,22 +132,40 @@ Patterns are images created on COLOURlovers using a specified palette of colors.
 Two functions are provided for using patterns. One, `clpatterns` (in plural form), searches for patterns according to user, hue(s), color(s) (in hexidecimal representation), or keyword(s).
 
 ```
-clpatterns('top')
+> clpatterns('top')
+Pattern ID:      582552 
+Title:           saturday warmth 
+Created by user: logochic 
+Date created:    2009-08-22 10:25:54 
+Views:           122063 
+Votes:           4089 
+Comments:        159 
+Hearts:          4.5 
+Rank:            1 
+URL:             http://www.colourlovers.com/pattern/582552/saturday_warmth 
+Image URL:       
+Colors:          #FCEBB6, #5E412F, #F07818, #78C0A8, #F0A830 
+
+...
 ```
 
 The other function, `clpattern` (in singular form), retrieves a pattern by its identifying number.
 
 ```
-pattern1 <- clpattern('1451')
-# plot the pattern
-plot(pattern1)
-# extract colors from the pattern
-swatch(pattern1)
+> pattern1 <- clpattern('1451')
+> # extract colors from the pattern
+> swatch(pattern1)
+[[1]]
+[1] "#52202E" "#1A1313" "#F7F6A8" "#C4F04D"
 ```
 
 The response includes the creator's username, COLOURlovers ratings (views, votes, comments, hearts, and rank), the palette of colors (in hexidecimal representation) used in the pattern, and URLs for the images of the pattern.
 
 Here's an example of the image URL at work (credit "Geek Chic" (1451) by _183):
+
+```
+plot(clpattern('1451'))
+```
 
 [![Geek Chic (1451) by _183](http://colourlovers.com.s3.amazonaws.com/images/patterns/1/1451.png)](http://colourlovers.com.s3.amazonaws.com/images/patterns/1/1451.png)
 
@@ -129,20 +189,6 @@ Lovers:              4
 Comments on profile: 0 
 URL:                 http://www.colourlovers.com/lover/Estefaniamartial 
 API URL:             http://www.colourlovers.com/api/lover/Estefaniamartial 
-
-Lover username:      GRR 
-Registered:          2012-06-02 23:41:18 
-Last active:         2012-07-03 00:00:10 
-Rating:              16777215 
-Location:             
-Colors:              0 
-Palettes:            0 
-Patterns:            0 
-Comments made:       22 
-Lovers:              1 
-Comments on profile: 2 
-URL:                 http://www.colourlovers.com/lover/GRR 
-API URL:             http://www.colourlovers.com/api/lover/GRR 
 
 ...
 ```
@@ -185,4 +231,6 @@ Total lovers: 4116021
 ---
 ## Using colourlovers in R graphics ##
 
-COMING SOON
+The `plot` method for the various **colourlovers** functions pulls PNG-formatted images from the COLOURlovers website and displays them in R graphics, which is helpful for previewing particular colors, palettes, or patterns. But, using the returned colors in R graphics requires extracting the relevant colors and using them in some way. Thus the function `swatch` (as shown above) extracts color information from any of the functions, and converts them to a character vector of hexidecimal color representations, which can easily be directly plugged into subsequent graphics calls.
+
+MORE DETAILS COMING SOON
