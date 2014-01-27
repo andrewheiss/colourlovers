@@ -8,6 +8,7 @@ The **colourlovers** package connects R to the [COLOURlovers](http://www.colourl
 
 The **colourlovers** package is released under GPL-2, while the COLOURlovers community-generated data returned by the API is available under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/) license.
 
+---
 ## Installation ##
 
 You can <!--find a stable release on [CRAN](http://cran.r-project.org/web/packages/colourlovers/index.html), or--> install the latest development version from GitHub using [Hadley's](http://had.co.nz/) [devtools](http://cran.r-project.org/web/packages/devtools/index.html) package:
@@ -17,6 +18,7 @@ library("devtools")
 install_github("leeper/colourlovers")
 ```
 
+---
 ## Functionality ##
 
 The API functionality is broken down into five categories: colors, palettes, patterns, lovers, and statistics. The next sections provide examples of each.
@@ -180,6 +182,7 @@ Total patterns: 4106345
 Total lovers: 4116021
 ```
 
+---
 ## Using colourlovers in R graphics ##
 
 COMING SOON
