@@ -13,8 +13,6 @@
 clpng(x, ...)
 
 clpie(x, ...)
-
-plot(x, type='png', ...)
 }
 \arguments{
   \item{x}{A colourlovers color, palette, or pattern object.}
