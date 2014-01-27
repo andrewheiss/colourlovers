@@ -35,9 +35,41 @@ clpng <- function(x, ...){
     return(invisible(x))
 }
 
-plot.clcolor <- function(x,...) clpng(x, ...)
-plot.clcolors <- function(x,...) clpng(x, ...)
-plot.clpalette <- function(x,...) clpng(x, ...)
-plot.clpalettes <- function(x,...) clpng(x, ...)
-plot.clpattern <- function(x,...) clpng(x, ...)
-plot.clpatterns <- function(x,...) clpng(x, ...)
+clpie <- function(x, ...){
+    # extract colors a COLOURlovers object and print a pie of them
+    
+    s1 <- inherits(x, 'clcolor') | inherits(x, 'clpalette') | inherits(x, 'clpattern')
+    s2 <- inherits(x, 'clcolors') | inherits(x, 'clpalettes') | inherits(x, 'clpatterns')
+    if(s1) {
+        u <- swatch(x)
+        par(mar=c(1,1,2,1))    
+        if(inherits(x, 'clcolor'))
+            m <- paste('Color #',x$hex,sep='')
+        else if(inherits(x, 'clpalette'))
+            m <- paste('Palette #',x$id,sep='')
+        else if(inherits(x, 'clpattern'))
+            m <- paste('Pattern #',x$id,sep='')
+        else
+            m <- ''
+        pie(1:2, labels=u, border=NA, col=u, main=m)
+        return(invisible(x))
+    } else if(s2){
+        par(mar=c(1,1,2,1), ask=TRUE)
+        sapply(x, plot)
+        return(invisible(x))
+    }
+}
+
+
+plot.clcolor <-
+plot.clcolors <- 
+plot.clpalette <- 
+plot.clpalettes <- 
+plot.clpattern <- 
+plot.clpatterns <- 
+function(x,type='png',...) {
+    if(type=='png')
+        clpng(x, ...)
+    else if(type=='pie')
+        clpie(x, ...)
+}
