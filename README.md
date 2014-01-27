@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/leeper/colourlovers.png?branch=master)](https://travis-ci.org/leeper/colourlovers)
 
-The **colourlovers** package connects R to the [COLOURlovers](http://www.colourlovers.com/) API. COLOURlovers is a social networking site for sharing colors, color palettes, and color-rich visual designs. The social networking features of the site mean that COLOURlovers provides not only rich, original color palettes to use in R graphics but also provides ratings and community evaluations of those palettes, helpings R graphics designers to utilize visually pleasing color combinations.
+The **colourlovers** package connects R to the [COLOURlovers](http://www.colourlovers.com/) API. COLOURlovers is a social networking site for sharing colors, color palettes, and color-rich visual designs. The social networking features of the site mean that COLOURlovers provides not only rich, original color palettes to use in R graphics but also provides ratings and community evaluations of those palettes, helping R graphics designers to utilize visually pleasing color combinations.
 
 ## License ##
 
@@ -175,7 +175,7 @@ plot(clpattern('1451'))
 Two functions are provided for viewing information about COLOURlovers use. One, `cllovers` (in plural form), serves as a limited search function for identifying users. The function provides an argument `set` to identify "new" or "top"-rated users, sorted by one or more attributes.
 
 ```
-> cllovers(set='top', fmt='json')
+> cllovers(set='top')
 Lover username:      Estefaniamartial 
 Registered:          2012-11-07 21:50:45 
 Last active:         2013-04-15 15:54:55 
@@ -196,7 +196,7 @@ API URL:             http://www.colourlovers.com/api/lover/Estefaniamartial
 The other function, `cllover` (in singular form), pulls the same information for a named user.
 
 ```
-> cllover('COLOURlovers', fmt='json')
+> cllover('COLOURlovers')
 Lover username:      colourlovers 
 Registered:          2007-09-11 02:44:32 
 Last active:         2011-07-21 12:26:10 
@@ -233,4 +233,4 @@ Total lovers: 4116021
 
 The `plot` method for the various **colourlovers** functions pulls PNG-formatted images from the COLOURlovers website and displays them in R graphics, which is helpful for previewing particular colors, palettes, or patterns. But, using the returned colors in R graphics requires extracting the relevant colors and using them in some way. Thus the function `swatch` (as shown above) extracts color information from any of the functions, and converts them to a character vector of hexidecimal color representations, which can easily be directly plugged into subsequent graphics calls.
 
-MORE DETAILS COMING SOON
+*MORE DETAILS COMING SOON*
