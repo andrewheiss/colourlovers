@@ -172,6 +172,10 @@ plot(clpattern('1451'))
 [![Geek Chic (1451) by _183](http://colourlovers.com.s3.amazonaws.com/images/patterns/1/1451.png)](http://colourlovers.com.s3.amazonaws.com/images/patterns/1/1451.png)
 
 
+Using `plot(clpattern('1451'), type='pie')`, the `plot` method extracts the `swatch` for the pattern (or a palette or color) and displays the results as a pie chart, with each color labeled:
+
+[![Pie chart for pattern 1451](http://i.imgur.com/ESgl9pYm.png)](http://imgur.com/ESgl9pY)
+
 ### Get Lovers (Users) ###
 
 Two functions are provided for viewing information about COLOURlovers use. One, `cllovers` (in plural form), serves as a limited search function for identifying users. The function provides an argument `set` to identify "new" or "top"-rated users, sorted by one or more attributes.
