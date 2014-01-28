@@ -10,6 +10,8 @@
 \title{Plot a COLOURlovers object}
 \description{Plot a color, palette, or pattern color pie or PNG image in a plotting device}
 \usage{
+plot.clpalettes(x, type='png', ...)
+
 clpng(x, ...)
 
 clpie(x, ...)
@@ -27,11 +29,11 @@ clpie(x, ...)
 %\seealso{}
 \examples{
 # plot a color clpng
-c <- clcolor(rgb(0,0,1), fmt='json')
+c <- clcolor(rgb(0,0,1))
 plot(c)
 
 # plot a pattern clpng
-p <- clpattern('1451', fmt='json')
+p <- clpattern('1451')
 plot(p)
 clpng(p)
 
@@ -43,8 +45,9 @@ clpie(p)
 
 \dontrun{
 # plot multiple palettes (interactively)
-p <- clpalettes('top', fmt='json')
-plot(p)
+p <- clpalettes('top')
+plot(p) # PNG images
+plot(p, type='pie') # pie chart swatches
 }
 }
 %\keyword{ ~kwd1 }
