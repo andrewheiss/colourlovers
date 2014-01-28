@@ -10,7 +10,12 @@
 \title{Plot a COLOURlovers object}
 \description{Plot a color, palette, or pattern color pie or PNG image in a plotting device}
 \usage{
-plot.clpalettes(x, type='png', ...)
+\method{plot}{clcolor}{x, type='png', \dots}
+\method{plot}{clcolors}{x, type='png', \dots}
+\method{plot}{clpalette}{x, type='png', \dots}
+\method{plot}{clpalettes}{x, type='png', \dots}
+\method{plot}{clpattern}{x, type='png', \dots}
+\method{plot}{clpatterns}{x, type='png', \dots}
 
 clpng(x, ...)
 
@@ -19,7 +24,7 @@ clpie(x, ...)
 \arguments{
   \item{x}{A colourlovers color, palette, or pattern object.}
   \item{type}{One of \dQuote{png} (the default) or \dQuote{pie}.}
-  \item{...}{Ignored.} 
+  \item{\dots}{Ignored.} 
 }
 \details{Plot a colourlovers PNG image in a new plotting window.}
 \value{The \code{x} object is invisibly returned.}

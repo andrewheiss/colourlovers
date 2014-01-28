@@ -11,7 +11,7 @@ The **colourlovers** package is released under GPL-2, while the COLOURlovers com
 ---
 ## Installation ##
 
-You can <!--find a stable release on [CRAN](http://cran.r-project.org/web/packages/colourlovers/index.html), or--> install the latest development version from GitHub using [Hadley's](http://had.co.nz/) [devtools](http://cran.r-project.org/web/packages/devtools/index.html) package:
+You can find a stable release on [CRAN](http://cran.r-project.org/web/packages/colourlovers/index.html), or install the latest development version from GitHub using [Hadley's](http://had.co.nz/) [devtools](http://cran.r-project.org/web/packages/devtools/index.html) package:
 ```
 # install.packages("devtools")
 library("devtools")
