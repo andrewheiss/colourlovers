@@ -1,4 +1,4 @@
-\name{clpng}
+\name{plot}
 \alias{clpng}
 \alias{clpie}
 \alias{plot.clcolor}
@@ -10,12 +10,12 @@
 \title{Plot a COLOURlovers object}
 \description{Plot a color, palette, or pattern color pie or PNG image in a plotting device}
 \usage{
-\method{plot}{clcolor}{x, type='png', \dots}
-\method{plot}{clcolors}{x, type='png', \dots}
-\method{plot}{clpalette}{x, type='png', \dots}
-\method{plot}{clpalettes}{x, type='png', \dots}
-\method{plot}{clpattern}{x, type='png', \dots}
-\method{plot}{clpatterns}{x, type='png', \dots}
+\method{plot}{clcolor}(x, type='png', \dots)
+\method{plot}{clcolors}(x, type='png', \dots)
+\method{plot}{clpalette}(x, type='png', \dots)
+\method{plot}{clpalettes}(x, type='png', \dots)
+\method{plot}{clpattern}(x, type='png', \dots)
+\method{plot}{clpatterns}(x, type='png', \dots)
 
 clpng(x, ...)
 
