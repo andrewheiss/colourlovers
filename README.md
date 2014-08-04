@@ -8,17 +8,16 @@ The **colourlovers** package connects R to the [COLOURlovers](http://www.colourl
 
 The **colourlovers** package is released under GPL-2, while the COLOURlovers community-generated data returned by the API is available under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/) license.
 
----
 ## Installation ##
 
 You can find a stable release on [CRAN](http://cran.r-project.org/web/packages/colourlovers/index.html), or install the latest development version from GitHub using [Hadley's](http://had.co.nz/) [devtools](http://cran.r-project.org/web/packages/devtools/index.html) package:
+
 ```
 # install.packages("devtools")
 library("devtools")
 install_github("leeper/colourlovers")
 ```
 
----
 ## Functionality ##
 
 The API functionality is broken down into five categories: colors, palettes, patterns, lovers, and statistics. The next sections provide examples of each.
@@ -123,8 +122,6 @@ plot(palette1)
 Here's an example of the image URL at work (credit "Anaconda" (113451) by kunteper):
 
 [![Anaconda (113451) by kunteper](http://www.colourlovers.com/paletteImg/2B2D42/7A7D7F/B1BBCF/6E0B21/9B4D73/Anaconda.png)](http://www.colourlovers.com/paletteImg/2B2D42/7A7D7F/B1BBCF/6E0B21/9B4D73/Anaconda.png)
-
-
 
 
 ### Get Patterns (Designs) ###
