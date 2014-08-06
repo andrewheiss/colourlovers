@@ -48,12 +48,14 @@ Specifying named arguments to \code{...} allows the user to request a specific r
 %\note{}
 %\seealso{}
 \examples{
+e <- function(e) NULL # function for tryCatch to fail in examples
+
 # get a random pattern
-clpatterns('random')
+tryCatch( clpatterns('random'), error = e)
 
 # plot at a single pattern
-p <- clpattern('1451', fmt='json')
-plot(p)
+p <- tryCatch( clpattern('1451', fmt='json'), error = e)
+if(!is.null(p)) plot(p)
 }
 %\keyword{ ~kwd1 }
 %\keyword{ ~kwd2 }

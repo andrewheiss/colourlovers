@@ -1,3 +1,9 @@
+# CHANGES TO colourlvoers 0.2 #
+
+## DOCUMENTATION ##
+
+* Examples in documentation are now `tryCatch`-wrapped to hopefully avoid any unwanted errors, some of which emerged on OSX Mavericks but were not generally reproducible. (Thanks to Brian Ripley and Christophe Lalanne for assistance) (#2)
+
 # CHANGES TO colourlovers 0.1 #
 
 * Initial release.

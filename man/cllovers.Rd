@@ -37,11 +37,13 @@ Specifying named arguments to \code{...} allows the user to request a specific r
 %\note{}
 %\seealso{}
 \examples{
+e <- function(e) NULL # function for tryCatch to fail in examples
+
 # retrieve top users
-cllovers(set='top', fmt='json')
+tryCatch( cllovers(set='top', fmt='json'), error = e)
 
 # retrieve a single user
-cllover('COLOURlovers', fmt='json')
+tryCatch( cllover('COLOURlovers', fmt='json'), error = e)
 }
 %\keyword{ ~kwd1 }
 %\keyword{ ~kwd2 }

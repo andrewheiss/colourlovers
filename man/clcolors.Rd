@@ -46,15 +46,17 @@ Specifying named arguments to \code{...} allows the user to request a specific r
 %\note{}
 %\seealso{}
 \examples{
+e <- function(e) NULL # function for tryCatch to fail in examples
+
 # get a random color
-clcolors('random')
+tryCatch( clcolors('random'), error = e)
 
 # get a single color
-clcolor('6B4106')
+tryCatch( clcolor('6B4106'), error = e)
 
 # plot a single color clpng
-c <- clcolor(rgb(0,0,1), fmt='json')
-plot(c)
+co <- tryCatch( clcolor(rgb(0,0,1), fmt='json'), error = e)
+if(!is.null(co)) plot(co)
 }
 %\keyword{ ~kwd1 }
 %\keyword{ ~kwd2 }

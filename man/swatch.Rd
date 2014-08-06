@@ -16,20 +16,22 @@ swatch(x, ...)
 %\note{}
 %\seealso{}
 \examples{
+e <- function(e) NULL # function for tryCatch to fail in examples
+
 # get a single random color
-swatch(clcolors('random'))
+tryCatch( swatch(clcolors('random')), error = e)
 
 # get top colors
-swatch(clcolors('top'))
+tryCatch( swatch(clcolors('top')), error = e)
 
 # get colors from a specific palette
-swatch(clpalette('113451'))
+tryCatch( swatch(clpalette('113451')), error = e)
 
 # get colors from new palettes
-swatch(clpalettes('new'))
+tryCatch( swatch(clpalettes('new')), error = e)
 
 # get colors from specific pattern
-swatch(clpattern('1451'))
+tryCatch( swatch(clpattern('1451')), error = e)
 
 }
 %\keyword{ ~kwd1 }

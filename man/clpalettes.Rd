@@ -49,16 +49,18 @@ Specifying named arguments to \code{...} allows the user to request a specific r
 %\note{}
 %\seealso{}
 \examples{
+e <- function(e) NULL # function for tryCatch to fail in examples
+
 # get a random palette
-clpalettes('random')
+tryCatch( clpalettes('random'), error = e)
 
 # download top palettes
-clpalettes('top', fmt='json')
+tryCatch( clpalettes('top', fmt='json'), error = e)
 
 # plot at a single palette
 pid <- '113451'
-p <- clpalette(pid, fmt='json')
-plot(p)
+p <- tryCatch( clpalette(pid, fmt='json'), error = e)
+if(!is.null(p)) plot(p)
 }
 %\keyword{ ~kwd1 }
 %\keyword{ ~kwd2 }
