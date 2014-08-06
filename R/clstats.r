@@ -8,4 +8,4 @@ clstats <- function(type, fmt='xml'){
 }
 
 print.clstats <- function(x,...)
-    cat('Total ',attr(x,'clstat_type'),': ',x$total,'\n',sep='')
+    cat('Total ',attr(x,'clstat_type'),': ',attr(x, 'total'),'\n',sep='')
