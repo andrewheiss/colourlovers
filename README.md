@@ -18,7 +18,34 @@ library("devtools")
 install_github("leeper/colourlovers")
 ```
 
-## Functionality ##
+---
+## Using colourlovers in R graphics ##
+
+The `plot` method for the various **colourlovers** functions pulls PNG-formatted images from the COLOURlovers website and displays them in R graphics, which is helpful for previewing particular colors, palettes, or patterns. But, using the returned colors in R graphics requires extracting the relevant colors and using them in some way. Thus the function `swatch` extracts color information from any of the function return values, and converts them to a character vector of hexidecimal color representations, which can easily be directly plugged into subsequent graphics calls.
+
+Here's a simple `barplot` example using the built-in `VADeaths` dataset redesigned using four different top color patterns:
+
+```
+palette1 <- clpalette('113451')
+palette2 <- clpalette('92095')
+palette3 <- clpalette('629637')
+palette4 <- clpalette('694737')
+
+layout(matrix(1:4, nrow=2))
+par(mar=c(2,2,2,2))
+barplot(VADeaths, col = swatch(palette1)[[1]], border = NA)
+barplot(VADeaths, col = swatch(palette2)[[1]], border = NA)
+barplot(VADeaths, col = swatch(palette3)[[1]], border = NA)
+barplot(VADeaths, col = swatch(palette4)[[1]], border = NA)
+```
+
+The result:
+
+![](http://i.imgur.com/KQOFx9G.png)
+
+
+---
+## Details of Package Functionality ##
 
 The API functionality is broken down into five categories: colors, palettes, patterns, lovers, and statistics. The next sections provide examples of each.
 
@@ -231,27 +258,3 @@ Total patterns: 4106345
 Total lovers: 4116021
 ```
 
----
-## Using colourlovers in R graphics ##
-
-The `plot` method for the various **colourlovers** functions pulls PNG-formatted images from the COLOURlovers website and displays them in R graphics, which is helpful for previewing particular colors, palettes, or patterns. But, using the returned colors in R graphics requires extracting the relevant colors and using them in some way. Thus the function `swatch` (as shown above) extracts color information from any of the functions, and converts them to a character vector of hexidecimal color representations, which can easily be directly plugged into subsequent graphics calls.
-
-Here's a simple barplot using the built-in `VADeaths` dataset redesigned using four different top color patterns:
-
-```
-palette1 <- clpalette('113451')
-palette2 <- clpalette('92095')
-palette3 <- clpalette('629637')
-palette4 <- clpalette('694737')
-
-layout(matrix(1:4, nrow=2))
-par(mar=c(2,2,2,2))
-barplot(VADeaths, col = swatch(palette1)[[1]], border = NA)
-barplot(VADeaths, col = swatch(palette2)[[1]], border = NA)
-barplot(VADeaths, col = swatch(palette3)[[1]], border = NA)
-barplot(VADeaths, col = swatch(palette4)[[1]], border = NA)
-```
-
-The result:
-
-![](http://i.imgur.com/KQOFx9G.png)
