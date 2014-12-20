@@ -18,7 +18,6 @@ library("devtools")
 install_github("leeper/colourlovers")
 ```
 
----
 ## Using colourlovers in R graphics ##
 
 The `plot` method for the various **colourlovers** functions pulls PNG-formatted images from the COLOURlovers website and displays them in R graphics, which is helpful for previewing particular colors, palettes, or patterns. But, using the returned colors in R graphics requires extracting the relevant colors and using them in some way. Thus the function `swatch` extracts color information from any of the function return values, and converts them to a character vector of hexidecimal color representations, which can easily be directly plugged into subsequent graphics calls.
@@ -41,10 +40,9 @@ barplot(VADeaths, col = swatch(palette4)[[1]], border = NA)
 
 The result:
 
-![](http://i.imgur.com/KQOFx9G.png)
+![Matrix of plots](http://i.imgur.com/KQOFx9G.png)
 
 
----
 ## Details of Package Functionality ##
 
 The API functionality is broken down into five categories: colors, palettes, patterns, lovers, and statistics. The next sections provide examples of each.

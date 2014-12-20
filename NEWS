@@ -4,6 +4,10 @@
 
 * Examples in documentation are now `tryCatch`-wrapped to hopefully avoid any unwanted errors, some of which emerged on OSX Mavericks but were not generally reproducible. (Thanks to Brian Ripley and Christophe Lalanne for assistance) (#2)
 
+## BUG FIXES ##
+
+* Fixed pandoc conversion error in README.md (h/t Kurt Hornik)
+
 # CHANGES TO colourlovers 0.1 #
 
 * Initial release.
