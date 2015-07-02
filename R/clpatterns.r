@@ -7,8 +7,8 @@ clpattern <- function(id, fmt='xml'){
 
 clpatterns <- function(set = NULL, ..., fmt='xml'){
     # request multiple patterns
-    if(!is.null(set) && !set %in% c('new', 'top', 'random'))
-        stop("set must be 'new', 'top', or 'random', or NULL")
+    if(!is.null(set))
+        set <- match.arg(set, c('new', 'top', 'random'))
     query <- list(...)
     if(length(query)==0)
         query <- NULL

@@ -7,8 +7,8 @@ cllover <- function(user, comments = FALSE, fmt = 'xml'){
 
 cllovers <- function(set = NULL, ..., fmt = 'xml'){
     # request multiple lovers
-    if(!is.null(set) && !set %in% c('new', 'top'))
-        stop("type must be 'new' or 'top'")
+    if(!is.null(set))
+        set <- match.arg(set, c('new', 'top'))
     query <- list(...)
     query <- query[!sapply(query, is.null)]
     allowed <- c('orderCol','sortBy','numResults','resultOffset')

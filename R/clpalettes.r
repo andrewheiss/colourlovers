@@ -7,8 +7,8 @@ clpalette <- function(id, widths = FALSE, fmt='xml'){
 
 clpalettes <- function(set=NULL, ..., fmt='xml'){
     # request multiple palettes
-    if(!is.null(set) && !set %in% c('new', 'top', 'random'))
-        stop("set must be 'new', 'top', or 'random'")
+    if(!is.null(set))
+        set <- match.arg(set, c('new', 'top', 'random'))
     query <- list(...)
     if(length(query)==0)
         query <- NULL
