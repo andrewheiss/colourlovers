@@ -3,6 +3,7 @@
 [![CRAN Version](http://www.r-pkg.org/badges/version/colourlovers)](http://cran.r-project.org/package=colourlovers)
 ![Downloads](http://cranlogs.r-pkg.org/badges/colourlovers)
 [![Build Status](https://travis-ci.org/leeper/colourlovers.png?branch=master)](https://travis-ci.org/leeper/colourlovers)
+[![codecov.io](http://codecov.io/github/leeper/colourlovers/coverage.svg?branch=master)](http://codecov.io/github/leeper/UNF?branch=colourlovers)
 
 The **colourlovers** package connects R to the [COLOURlovers](http://www.colourlovers.com/) API. COLOURlovers is a social networking site for sharing colors, color palettes, and color-rich visual designs. The social networking features of the site mean that COLOURlovers provides not only rich, original color palettes to use in R graphics but also provides ratings and community evaluations of those palettes, helping R graphics designers to utilize visually pleasing color combinations.
 
