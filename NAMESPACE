@@ -1,9 +1,10 @@
 exportPattern("^[[:alpha:]]+")
-importFrom(png, readPNG)
-importFrom(RJSONIO, toJSON, fromJSON)
-#importFrom(RCurl, getURL, url.exists, curlPerform, basicTextGatherer, curlEscape)
-importFrom(XML, xmlParse, xmlChildren, xmlValue, xpathApply, xmlAttrs, xmlToList, htmlTreeParse)
-importFrom(XML, NOCDATA)
+importFrom("png", "readPNG")
+importFrom("jsonlite", "toJSON", "fromJSON")
+importFrom("XML", "xmlParse", "xmlChildren", "xmlValue", "xpathApply", 
+                  "xmlAttrs", "xmlToList", "htmlTreeParse", "NOCDATA")
+importFrom("graphics", "axis", "par", "pie", "plot", "rasterImage")
+importFrom("utils", "download.file")
 
 S3method(print, clstats)
 S3method(print, clcolor)
