@@ -1,12 +1,12 @@
 clquery <- function(type, set = NULL, query = NULL, fmt = 'xml', ...){
-	# API workhorse query function
-	if(!type %in% c('color', 'colors',
+    # API workhorse query function
+    if(!type %in% c('color', 'colors',
                     'palette', 'palettes',
                     'pattern', 'patterns',
                     'lover', 'lovers',
                     'stats'))
         warning("API type not recognized")
-	url <- paste('http://www.colourlovers.com/api/',type,sep="")
+    url <- paste('http://www.colourlovers.com/api/',type,sep="")
     if(!is.null(set))
     url <- paste(url,set,sep="/")
     
@@ -29,7 +29,7 @@ clquery <- function(type, set = NULL, query = NULL, fmt = 'xml', ...){
         p <- xmlParse(response, options=XML::NOCDATA)
         out <- xmlToList(p, addAttributes=FALSE)
     } else if(fmt=='json'){
-        out <- fromJSON(response, simplify=FALSE)
+        out <- fromJSON(response, simplifyVector = FALSE)
     } else
         out <- response
     return(out)
