@@ -1,34 +1,6 @@
-# R client for the COLOURlovers API #
-
-[![CRAN Version](http://www.r-pkg.org/badges/version/colourlovers)](http://cran.r-project.org/package=colourlovers)
-![Downloads](http://cranlogs.r-pkg.org/badges/colourlovers)
-[![Build Status](https://travis-ci.org/leeper/colourlovers.png?branch=master)](https://travis-ci.org/leeper/colourlovers)
-[![codecov.io](http://codecov.io/github/leeper/colourlovers/coverage.svg?branch=master)](http://codecov.io/github/leeper/colourlovers?branch=master)
+# Client for the COLOURlovers API #
 
 The **colourlovers** package connects R to the [COLOURlovers](http://www.colourlovers.com/) API. COLOURlovers is a social networking site for sharing colors, color palettes, and color-rich visual designs. The social networking features of the site mean that COLOURlovers provides not only rich, original color palettes to use in R graphics but also provides ratings and community evaluations of those palettes, helping R graphics designers to utilize visually pleasing color combinations.
-
-## License ##
-
-The **colourlovers** package is released under GPL-2, while the COLOURlovers community-generated data returned by the API is available under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/) license.
-
-## Installation ##
-
-You can find a stable release on [CRAN](http://cran.r-project.org/web/packages/colourlovers/index.html):
-
-
-```R
-install.packages("colourlovers")
-```
-
-or install the latest development version from GitHub using [Hadley's](http://had.co.nz/) [devtools](http://cran.r-project.org/web/packages/devtools/index.html) package:
-
-```R
-if (!require("devtools")) {
-    install.packages("devtools")
-    library("devtools")
-}
-install_github("leeper/colourlovers")
-```
 
 ## Using colourlovers in R graphics ##
 
@@ -39,13 +11,6 @@ Here's a simple `barplot` example using the built-in `VADeaths` dataset redesign
 
 ```r
 library("colourlovers")
-```
-
-```
-## Warning: package 'colourlovers' was built under R version 3.2.3
-```
-
-```r
 palette1 <- clpalette('113451')
 palette2 <- clpalette('92095')
 palette3 <- clpalette('629637')
@@ -66,9 +31,7 @@ The result:
 ![Matrix of plots](http://i.imgur.com/KQOFx9G.png)
 
 
-## Details of Package Functionality ##
-
-The API functionality is broken down into five categories: colors, palettes, patterns, lovers, and statistics. The next sections provide examples of each.
+The API functionality is broken down into five categories: colors, palettes, patterns, lovers, and statistics. The next sections provide examples of the first three.
 
 Note that the `clcolor()`, `clcolors()`, `clpalette()`, `clpalettes()`, `clpattern()`, and `clpatterns()` functions all have S3 `plot()` methods. These methods produce either simple plots of colors, palettes, and patterns using `rasterImage()` (and the `png::readPNG()` function) or a pie chart of the returned color values (e.g., `plot(obj, type='pie')`).
 
@@ -81,7 +44,7 @@ swatch(clcolors('random'))
 
 ```
 ## [[1]]
-## [1] "#0745C0"
+## [1] "#E1EFB4"
 ```
 
 ```r
@@ -90,7 +53,7 @@ swatch(clpalettes('random'))
 
 ```
 ## [[1]]
-## [1] "#C9C783" "#F8E9C5" "#CDAD70" "#BFD0B0" "#44372E"
+## [1] "#252C3B" "#FFF9E6" "#FAE493" "#FC8D77" "#4A3C3A"
 ```
 
 ### Get Colors ###
@@ -107,9 +70,9 @@ clcolors('top')[[1]]
 ## Title:           Black 
 ## Created by user: ninjascience 
 ## Date created:    2004-12-17 08:36:26 
-## Views:           127535 
-## Votes:           1415 
-## Comments:        1784 
+## Views:           128757 
+## Votes:           1428 
+## Comments:        1785 
 ## Hearts:          4.5 
 ## Rank:            1 
 ## URL:             http://www.colourlovers.com/color/000000/Black 
@@ -129,7 +92,7 @@ clcolor('6B4106')
 ## Title:           wet dirt 
 ## Created by user: jessicabrown 
 ## Date created:    2008-03-17 11:22:21 
-## Views:           417 
+## Views:           421 
 ## Votes:           1 
 ## Comments:        0 
 ## Hearts:          0 
@@ -151,7 +114,7 @@ clcolor(hsv(.5,.5,.5))
 ## Title:           H, S & B 
 ## Created by user: serafim 
 ## Date created:    2005-12-15 08:07:52 
-## Views:           547 
+## Views:           549 
 ## Votes:           5 
 ## Comments:        4 
 ## Hearts:          0 
@@ -170,8 +133,8 @@ clcolor(rgb(0, 1, 0, .5))
 ## Title:           Primary Green 
 ## Created by user: il morto 
 ## Date created:    2005-07-04 09:53:05 
-## Views:           3858 
-## Votes:           52 
+## Views:           3897 
+## Votes:           53 
 ## Comments:        32 
 ## Hearts:          0 
 ## Rank:            522 
@@ -189,7 +152,7 @@ clcolor(gray(.5))
 ## Title:           917~choice grey 
 ## Created by user: DESIGNJUNKEE 
 ## Date created:    2005-08-29 11:30:26 
-## Views:           7343 
+## Views:           7384 
 ## Votes:           43 
 ## Comments:        16 
 ## Hearts:          5 
@@ -250,18 +213,18 @@ clpatterns('top')[[1]]
 ```
 
 ```
-## Pattern ID:      5025312 
-## Title:           A Beautiful Forever 
-## Created by user: paintglass 
-## Date created:    2015-12-03 21:31:11 
-## Views:           3100 
-## Votes:           16777215 
-## Comments:        6 
-## Hearts:          0 
-## Rank:            0 
-## URL:             http://www.colourlovers.com/pattern/5025312/A_Beautiful_Forever 
+## Pattern ID:      582552 
+## Title:           saturday warmth 
+## Created by user: logochic 
+## Date created:    2009-08-22 10:25:54 
+## Views:           149588 
+## Votes:           4651 
+## Comments:        166 
+## Hearts:          4.5 
+## Rank:            1 
+## URL:             http://www.colourlovers.com/pattern/582552/saturday_warmth 
 ## Image URL:       
-## Colors:          #470026, #D10070, #F2430C, #CDA62F, #FFF3E6
+## Colors:          #FCEBB6, #5E412F, #F07818, #78C0A8, #F0A830
 ```
 
 The other function, `clpattern()` (in singular form), retrieves a pattern by its identifying number.
@@ -293,89 +256,31 @@ Using `plot(clpattern('1451'), type='pie')`, the `plot` method extracts the `swa
 
 [![Pie chart for pattern 1451](http://i.imgur.com/ESgl9pYm.png)](http://imgur.com/ESgl9pY)
 
-### Get Lovers (Users) ###
 
-Two functions are provided for viewing information about COLOURlovers use. One, `cllovers()` (in plural form), serves as a limited search function for identifying users. The function provides an argument `set` to identify "new" or "top"-rated users, sorted by one or more attributes.
+## License ##
+
+The **colourlovers** package is released under GPL-2, while the COLOURlovers community-generated data returned by the API is available under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/) license.
+
+## Installation ##
+
+[![CRAN Version](http://www.r-pkg.org/badges/version/colourlovers)](http://cran.r-project.org/package=colourlovers)
+![Downloads](http://cranlogs.r-pkg.org/badges/colourlovers)
+[![Build Status](https://travis-ci.org/leeper/colourlovers.png?branch=master)](https://travis-ci.org/leeper/colourlovers)
+[![codecov.io](http://codecov.io/github/leeper/colourlovers/coverage.svg?branch=master)](http://codecov.io/github/leeper/colourlovers?branch=master)
+
+You can find a stable release on [CRAN](http://cran.r-project.org/web/packages/colourlovers/index.html):
 
 
-```r
-cllovers(set='top')[[1]]
+```R
+install.packages("colourlovers")
 ```
 
-```
-## Lover username:      popok302 
-## Registered:          2015-06-19 18:37:46 
-## Last active:         2015-06-25 12:38:25 
-## Rating:              16777215 
-## Location:             
-## Colors:              0 
-## Palettes:            0 
-## Patterns:            0 
-## Comments made:       0 
-## Lovers:              0 
-## Comments on profile: 0 
-## URL:                 http://www.colourlovers.com/lover/popok302 
-## API URL:             http://www.colourlovers.com/api/lover/popok302
-```
+or install the latest development version from GitHub using ghit:
 
-The other function, `cllover()` (in singular form), pulls the same information for a named user.
-
-
-```r
-cllover('COLOURlovers')
-```
-
-```
-## Lover username:      colourlovers 
-## Registered:          2007-09-11 02:44:32 
-## Last active:         2011-07-21 12:26:10 
-## Rating:              0 
-## Location:             
-## Colors:              0 
-## Palettes:            0 
-## Patterns:            0 
-## Comments made:       0 
-## Lovers:              0 
-## Comments on profile: 0 
-## URL:                 http://www.colourlovers.com/lover/colourlovers 
-## API URL:             http://www.colourlovers.com/api/lover/colourlovers
-```
-
-
-### Get Statistics ###
-
-**colourlovers** provides a function, `clstats()`, to return basic counts of available colors, palettes, patterns, and lovers. There is no obvious R application for this information, but is provided for the sake of completeness.
-
-
-```r
-clstats('colors')
-```
-
-```
-## Total colors: 1
-```
-
-```r
-clstats('palettes')
-```
-
-```
-## Total palettes: 1
-```
-
-```r
-clstats('patterns')
-```
-
-```
-## Total patterns: 1
-```
-
-```r
-clstats('lovers')
-```
-
-```
-## Total lovers: 1
+```R
+if (!require("ghit")) {
+    install.packages("ghit")
+}
+ghit::install_github("leeper/colourlovers")
 ```
 
