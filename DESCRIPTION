@@ -1,12 +1,19 @@
 Package: colourlovers
-Version: 0.2.0
-Date: 2015-12-22
+Version: 0.2.1
+Date: 2016-09-06
 Title: R Client for the COLOURlovers API
-Author: Thomas J. Leeper
-Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
-Imports: XML, jsonlite, png, graphics, utils
-Suggests: testthat
-Description: Provides access to the COLOURlovers <http://www.colourlovers.com/> API, which offers color inspiration and color palettes.
+Authors@R: person("Thomas J.", "Leeper", role = c("aut", "cre"), email = "thosjleeper@gmail.com")
+Imports:
+    XML,
+    jsonlite,
+    png,
+    graphics,
+    utils
+Suggests:
+    testthat
+Description: Provides access to the COLOURlovers <http://www.colourlovers.com/>
+    API, which offers color inspiration and color palettes.
 License: GPL-2
 URL: https://github.com/leeper/colourlovers
 BugReports: https://github.com/leeper/colourlovers/issues
+RoxygenNote: 5.0.1

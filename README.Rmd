@@ -142,12 +142,12 @@ The **colourlovers** package is released under GPL-2, while the COLOURlovers com
 
 ## Installation ##
 
-[![CRAN Version](http://www.r-pkg.org/badges/version/colourlovers)](http://cran.r-project.org/package=colourlovers)
+[![CRAN Version](http://www.r-pkg.org/badges/version/colourlovers)](https://cran.r-project.org/package=colourlovers)
 ![Downloads](http://cranlogs.r-pkg.org/badges/colourlovers)
 [![Build Status](https://travis-ci.org/leeper/colourlovers.png?branch=master)](https://travis-ci.org/leeper/colourlovers)
 [![codecov.io](http://codecov.io/github/leeper/colourlovers/coverage.svg?branch=master)](http://codecov.io/github/leeper/colourlovers?branch=master)
 
-You can find a stable release on [CRAN](http://cran.r-project.org/web/packages/colourlovers/index.html):
+You can find a stable release on [CRAN](https://cran.r-project.org/package=colourlovers):
 
 
 ```R
