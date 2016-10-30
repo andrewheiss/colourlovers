@@ -44,7 +44,7 @@ swatch(clcolors('random'))
 
 ```
 ## [[1]]
-## [1] "#E1EFB4"
+## [1] "#63945F"
 ```
 
 ```r
@@ -53,7 +53,7 @@ swatch(clpalettes('random'))
 
 ```
 ## [[1]]
-## [1] "#252C3B" "#FFF9E6" "#FAE493" "#FC8D77" "#4A3C3A"
+## [1] "#4D5C5F" "#64887C" "#A6A880" "#B3AA81" "#AE5D66"
 ```
 
 ### Get Colors ###
@@ -70,9 +70,9 @@ clcolors('top')[[1]]
 ## Title:           Black 
 ## Created by user: ninjascience 
 ## Date created:    2004-12-17 08:36:26 
-## Views:           128757 
-## Votes:           1428 
-## Comments:        1785 
+## Views:           135379 
+## Votes:           1461 
+## Comments:        1786 
 ## Hearts:          4.5 
 ## Rank:            1 
 ## URL:             http://www.colourlovers.com/color/000000/Black 
@@ -92,7 +92,7 @@ clcolor('6B4106')
 ## Title:           wet dirt 
 ## Created by user: jessicabrown 
 ## Date created:    2008-03-17 11:22:21 
-## Views:           421 
+## Views:           451 
 ## Votes:           1 
 ## Comments:        0 
 ## Hearts:          0 
@@ -114,7 +114,7 @@ clcolor(hsv(.5,.5,.5))
 ## Title:           H, S & B 
 ## Created by user: serafim 
 ## Date created:    2005-12-15 08:07:52 
-## Views:           549 
+## Views:           552 
 ## Votes:           5 
 ## Comments:        4 
 ## Hearts:          0 
@@ -133,8 +133,8 @@ clcolor(rgb(0, 1, 0, .5))
 ## Title:           Primary Green 
 ## Created by user: il morto 
 ## Date created:    2005-07-04 09:53:05 
-## Views:           3897 
-## Votes:           53 
+## Views:           4007 
+## Votes:           57 
 ## Comments:        32 
 ## Hearts:          0 
 ## Rank:            522 
@@ -152,7 +152,7 @@ clcolor(gray(.5))
 ## Title:           917~choice grey 
 ## Created by user: DESIGNJUNKEE 
 ## Date created:    2005-08-29 11:30:26 
-## Views:           7384 
+## Views:           7552 
 ## Votes:           43 
 ## Comments:        16 
 ## Hearts:          5 
@@ -213,18 +213,18 @@ clpatterns('top')[[1]]
 ```
 
 ```
-## Pattern ID:      582552 
-## Title:           saturday warmth 
-## Created by user: logochic 
-## Date created:    2009-08-22 10:25:54 
-## Views:           149588 
-## Votes:           4651 
-## Comments:        166 
-## Hearts:          4.5 
-## Rank:            1 
-## URL:             http://www.colourlovers.com/pattern/582552/saturday_warmth 
+## Pattern ID:      4370608 
+## Title:           0479 
+## Created by user: as warning 
+## Date created:    2014-07-06 03:13:02 
+## Views:           235 
+## Votes:           16777215 
+## Comments:        0 
+## Hearts:          0 
+## Rank:            0 
+## URL:             http://www.colourlovers.com/pattern/4370608/0479 
 ## Image URL:       
-## Colors:          #FCEBB6, #5E412F, #F07818, #78C0A8, #F0A830
+## Colors:          #FAF9CD, #002A31, #85A0AB, #BCB203, #322B33
 ```
 
 The other function, `clpattern()` (in singular form), retrieves a pattern by its identifying number.
@@ -263,12 +263,12 @@ The **colourlovers** package is released under GPL-2, while the COLOURlovers com
 
 ## Installation ##
 
-[![CRAN Version](http://www.r-pkg.org/badges/version/colourlovers)](http://cran.r-project.org/package=colourlovers)
+[![CRAN Version](http://www.r-pkg.org/badges/version/colourlovers)](https://cran.r-project.org/package=colourlovers)
 ![Downloads](http://cranlogs.r-pkg.org/badges/colourlovers)
 [![Build Status](https://travis-ci.org/leeper/colourlovers.png?branch=master)](https://travis-ci.org/leeper/colourlovers)
 [![codecov.io](http://codecov.io/github/leeper/colourlovers/coverage.svg?branch=master)](http://codecov.io/github/leeper/colourlovers?branch=master)
 
-You can find a stable release on [CRAN](http://cran.r-project.org/web/packages/colourlovers/index.html):
+You can find a stable release on [CRAN](https://cran.r-project.org/package=colourlovers):
 
 
 ```R
