@@ -1,6 +1,7 @@
 language: r
-sudo: required
-r_github_packages:
-- jimhester/covr
+sudo: false
+cache: packages
+r_packages:
+- covr
 after_success:
-- Rscript -e 'library(covr);codecov()'
+- Rscript -e 'library("covr");codecov()'
