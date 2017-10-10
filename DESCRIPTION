@@ -2,7 +2,11 @@ Package: colourlovers
 Version: 0.2.2
 Date: 2016-10-30
 Title: R Client for the COLOURlovers API
-Authors@R: person("Thomas J.", "Leeper", role = c("aut", "cre"), email = "thosjleeper@gmail.com")
+Authors@R: c(person("Thomas J.", "Leeper",
+                    role = c("aut", "cre"), 
+                    email = "thosjleeper@gmail.com",
+                    comment = c(ORCID = "0000-0003-4097-6326"))
+             )
 Imports:
     XML,
     jsonlite,
