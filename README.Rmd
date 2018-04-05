@@ -1,8 +1,8 @@
-# Client for the COLOURlovers API #
+# Client for the COLOURlovers API
 
 The **colourlovers** package connects R to the [COLOURlovers](http://www.colourlovers.com/) API. COLOURlovers is a social networking site for sharing colors, color palettes, and color-rich visual designs. The social networking features of the site mean that COLOURlovers provides not only rich, original color palettes to use in R graphics but also provides ratings and community evaluations of those palettes, helping R graphics designers to utilize visually pleasing color combinations.
 
-## Using colourlovers in R graphics ##
+## Using colourlovers in R graphics
 
 The `plot` method for the various **colourlovers** functions pulls PNG-formatted images from the COLOURlovers website and displays them in R graphics, which is helpful for previewing particular colors, palettes, or patterns. But, using the returned colors in R graphics requires extracting the relevant colors and using them in some way. Thus the function `swatch` extracts color information from any of the function return values, and converts them to a character vector of hexidecimal color representations, which can easily be directly plugged into subsequent graphics calls.
 
@@ -41,7 +41,7 @@ swatch(clcolors('random'))
 swatch(clpalettes('random'))
 ```
 
-### Get Colors ###
+### Get Colors
 
 Two functions retrieve information about individual colors from COLOURlovers. The first, `clcolors()` (in plural form), searches for colors according a number of named attributes.
 
@@ -73,7 +73,7 @@ plot(clcolor('00FF00'))
 
 [![Primary Green #00FF00](http://www.colourlovers.com/img/00FF00/100/100/Primary_Green.png)](http://www.colourlovers.com/img/00FF00/100/100/Primary_Green.png)
 
-### Get Palettes ###
+### Get Palettes
 
 Palettes are sets of colors created by COLOURlovers users. They show potentially attractive combinations of colors, and are the most useful aspect of the COLOURlovers API in an R context.
 
@@ -102,7 +102,7 @@ Here's an example of the image URL at work (credit "Anaconda" (113451) by kuntep
 [![Anaconda (113451) by kunteper](http://www.colourlovers.com/paletteImg/2B2D42/7A7D7F/B1BBCF/6E0B21/9B4D73/Anaconda.png)](http://www.colourlovers.com/paletteImg/2B2D42/7A7D7F/B1BBCF/6E0B21/9B4D73/Anaconda.png)
 
 
-### Get Patterns (Designs) ###
+### Get Patterns (Designs)
 
 Patterns are images created on COLOURlovers using a specified palette of colors. They serve as examples of how to use the palette in practice.
 
@@ -136,16 +136,16 @@ Using `plot(clpattern('1451'), type='pie')`, the `plot` method extracts the `swa
 [![Pie chart for pattern 1451](http://i.imgur.com/ESgl9pYm.png)](http://imgur.com/ESgl9pY)
 
 
-## License ##
+## License
 
 The **colourlovers** package is released under GPL-2, while the COLOURlovers community-generated data returned by the API is available under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/) license.
 
-## Installation ##
+## Installation
 
-[![CRAN Version](http://www.r-pkg.org/badges/version/colourlovers)](https://cran.r-project.org/package=colourlovers)
-![Downloads](http://cranlogs.r-pkg.org/badges/colourlovers)
+[![CRAN Version](https://www.r-pkg.org/badges/version/colourlovers)](https://cran.r-project.org/package=colourlovers)
+![Downloads](https://cranlogs.r-pkg.org/badges/colourlovers)
 [![Build Status](https://travis-ci.org/leeper/colourlovers.png?branch=master)](https://travis-ci.org/leeper/colourlovers)
-[![codecov.io](http://codecov.io/github/leeper/colourlovers/coverage.svg?branch=master)](http://codecov.io/github/leeper/colourlovers?branch=master)
+[![codecov.io](https://codecov.io/github/leeper/colourlovers/coverage.svg?branch=master)](https://codecov.io/github/leeper/colourlovers?branch=master)
 
 You can find a stable release on [CRAN](https://cran.r-project.org/package=colourlovers):
 
@@ -154,12 +154,12 @@ You can find a stable release on [CRAN](https://cran.r-project.org/package=colou
 install.packages("colourlovers")
 ```
 
-or install the latest development version from GitHub using ghit:
+or install the latest development version from GitHub using:
 
 ```R
-if (!require("ghit")) {
-    install.packages("ghit")
+if (!require("remotes")) {
+    install.packages("remotes")
 }
-ghit::install_github("leeper/colourlovers")
+remotes::install_github("leeper/colourlovers")
 ```
 
