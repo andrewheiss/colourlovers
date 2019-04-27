@@ -13,7 +13,7 @@ swatch(x, ...)
 }
 \value{
 A list of character vectors containing hexidecimal representations
-of colors.
+  of colors.
 }
 \description{
 Extract a list of colors from a COLOURlovers object
@@ -22,7 +22,6 @@ Extract a list of colors from a COLOURlovers object
 Extract color(s) from a colourlovers object.
 }
 \examples{
-
 e <- function(e) NULL # function for tryCatch to fail in examples
 
 # get top colors
@@ -33,7 +32,6 @@ tryCatch( swatch(clpalette('113451')), error = e)
 
 # get colors from specific pattern
 tryCatch( swatch(clpattern('1451')), error = e)
-
 
 }
 \author{

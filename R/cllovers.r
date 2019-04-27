@@ -47,42 +47,48 @@
 #' 
 #' # retrieve a single user
 #' tryCatch( cllover('COLOURlovers', fmt='json'), error = e)
-cllovers <- function(set = NULL, ..., fmt = 'xml'){
+cllovers <- function(set = NULL, ..., fmt = 'xml') {
     # request multiple lovers
-    if(!is.null(set))
+    if (!is.null(set)) {
         set <- match.arg(set, c('new', 'top'))
+    }
+    
     query <- list(...)
     query <- query[!sapply(query, is.null)]
-    allowed <- c('orderCol','sortBy','numResults','resultOffset')
+    allowed <- c('orderCol', 'sortBy', 'numResults', 'resultOffset')
     query[which(!names(query) %in% allowed)] <- NULL
     n <- names(query)
-    if('orderCol' %in% n){
-        ord <- c('dateCreated','score','name','numVotes','numViews')
-        if(!query$orderCol %in% ord){
+    
+    if ('orderCol' %in% n) {
+        ord <- c('dateCreated', 'score', 'name', 'numVotes', 'numViews')
+        if (!query$orderCol %in% ord) {
             query$orderCol <- NULL
             warning("orderCol not recognized")
         }
     }
-    if('sortBy' %in% n){
-        if(!query$sortBy %in% c('ASC','DSC')){
+    if ('sortBy' %in% n) {
+        if (!query$sortBy %in% c('ASC', 'DSC')) {
             query$sortBy <- NULL
             warning("sortBy not recognized")
         }
     }
-    if('numResults' %in% n){
-        if(query$numResults > 100 | query$numResults < 1)
+    if ('numResults' %in% n) {
+        if (query$numResults > 100 | query$numResults < 1)
             query$numResults <- 20
     }
-    if('resultOffset' %in% n){
-        if(query$resultOffset < 1)
+    if ('resultOffset' %in% n) {
+        if (query$resultOffset < 1)
             query$resultOffset <- 1
     }            
     
-    out <- clquery('lovers', set, query=NULL, fmt=fmt)
-    names(out) <- rep('lover',length(out))
-    class(out) <- c('cllovers',class(out))
-    for(i in 1:length(out))
-        class(out[[i]]) <- c('cllover',class(out))
+    out <- clquery('lovers', set, query = NULL, fmt = fmt)
+    names(out) <- rep('lover', length(out))
+    class(out) <- c('cllovers', class(out))
+    
+    for (i in 1:length(out)) {
+        class(out[[i]]) <- c('cllover', class(out))
+    }
+    
     return(out)
 }
 
@@ -91,31 +97,33 @@ cllovers <- function(set = NULL, ..., fmt = 'xml'){
 #' @param comments A boolean indicating whether to include the last ten
 #'   comments for the user. Default is \code{FALSE}.
 #' @export
-cllover <- function(user, comments = FALSE, fmt = 'xml'){
+cllover <- function(user, comments = FALSE, fmt = 'xml') {
     # request a single lover/user
-    out <- list(lover=clquery('lover', user, query=list(comments=as.numeric(comments)), fmt=fmt)[[1]])[[1]]
-    class(out) <- c('cllover',class(out))
+    out <- list(lover = clquery('lover', user, 
+                                query = list(comments = as.numeric(comments)), 
+                                fmt = fmt)[[1]])[[1]]
+    class(out) <- c('cllover', class(out))
     return(out)
 }
 
 #' @export
-print.cllover <- function(x,...) {
-    cat('Lover username:     ', x$userName[[1]],'\n')
-    cat('Registered:         ', x$dateRegistered,'\n')
-    cat('Last active:        ', x$dateLastActive,'\n')
-    cat('Rating:             ', x$rating,'\n')
-    cat('Location:           ', x$location[[1]],'\n')
-    cat('Colors:             ', x$numColors,'\n')
-    cat('Palettes:           ', x$numPalettes,'\n')
-    cat('Patterns:           ', x$numPatterns,'\n')
-    cat('Comments made:      ', x$numCommentsMade,'\n')
-    cat('Lovers:             ', x$numLovers,'\n')
-    cat('Comments on profile:', x$numCommentsOnProfile,'\n')
-    cat('URL:                ', x$url[[1]],'\n')
-    cat('API URL:            ', x$apiUrl[[1]],'\n')
+print.cllover <- function(x, ...) {
+    cat('Lover username:     ', x$userName[[1]], '\n')
+    cat('Registered:         ', x$dateRegistered, '\n')
+    cat('Last active:        ', x$dateLastActive, '\n')
+    cat('Rating:             ', x$rating, '\n')
+    cat('Location:           ', x$location[[1]], '\n')
+    cat('Colors:             ', x$numColors, '\n')
+    cat('Palettes:           ', x$numPalettes, '\n')
+    cat('Patterns:           ', x$numPatterns, '\n')
+    cat('Comments made:      ', x$numCommentsMade, '\n')
+    cat('Lovers:             ', x$numLovers, '\n')
+    cat('Comments on profile:', x$numCommentsOnProfile, '\n')
+    cat('URL:                ', x$url[[1]], '\n')
+    cat('API URL:            ', x$apiUrl[[1]], '\n')
     cat('\n')
     invisible(x)
 }
 
 #' @export
-print.cllovers <- function(x,...) sapply(x, print)
+print.cllovers <- function(x, ...) sapply(x, print)
