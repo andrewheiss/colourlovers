@@ -68,14 +68,14 @@ swatch(clcolors('random'))
 ```
 
     ## [[1]]
-    ## [1] "#E2D7C8"
+    ## [1] "#63945F"
 
 ``` r
 swatch(clpalettes('random'))
 ```
 
     ## [[1]]
-    ## [1] "#1A1406" "#721940" "#AD4D32" "#FF8587" "#F1E3A7"
+    ## [1] "#241D33" "#570D31" "#05274D" "#420E27" "#033E4D"
 
 ### Get Colors
 
@@ -314,3 +314,9 @@ if (!require("remotes")) {
 }
 remotes::install_github("leeper/colourlovers")
 ```
+
+# Community guidelines
+
+Please note that the ‘colourlovers’ project is released with a
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
+this project, you agree to abide by its terms.
