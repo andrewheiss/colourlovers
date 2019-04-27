@@ -1,3 +1,47 @@
+#' Plot a COLOURlovers object
+#' 
+#' Plot a color, palette, or pattern color pie or PNG image in a plotting
+#' device
+#' 
+#' Plot a colourlovers PNG image in a new plotting window.
+#' 
+#' @param x A colourlovers color, palette, or pattern object.
+#' @param \dots Ignored.
+#' 
+#' @return The \code{x} object is invisibly returned.
+#' 
+#' @export
+#' 
+#' @aliases clpng clpie plot.clcolor plot.clcolors plot.clpalette
+#'   plot.clpalettes plot.clpattern plot.clpatterns
+#' 
+#' @author Thomas J. Leeper
+#' 
+#' @examples
+#' e <- function(e) NULL # function for tryCatch to fail in examples
+#' 
+#' # plot a color clpng
+#' co <- tryCatch( clcolor(rgb(0,0,1)), error = e)
+#' if(!is.null(co)) plot(co)
+#' 
+#' # plot a pattern clpng
+#' p <- tryCatch( clpattern('1451'), error = e)
+#' if(!is.null(p)) plot(p)
+#' if(!is.null(p)) clpng(p)
+#' 
+#' # plot colors from a palette
+#' p <- tryCatch( clpalette('113451'), error = e)
+#' if(!is.null(p)) plot(p, type='pie')
+#' if(!is.null(p)) clpie(p)
+#' 
+#' 
+#' \dontrun{
+#' # plot multiple palettes (interactively)
+#' p <- tryCatch( clpalettes('top'), error = e)
+#' if(!is.null(p)) plot(p) # PNG images
+#' if(!is.null(p)) plot(p, type='pie') # pie chart swatches
+#' }
+#' 
 clpng <- function(x, ...){
     # extract an imageUrl from a COLOURlovers object and print a clpng
     
@@ -35,6 +79,8 @@ clpng <- function(x, ...){
     return(invisible(x))
 }
 
+#' @rdname clpng
+#' @export
 clpie <- function(x, ...){
     # extract colors a COLOURlovers object and print a pie of them
     
@@ -60,16 +106,27 @@ clpie <- function(x, ...){
     }
 }
 
-
-plot.clcolor <-
-plot.clcolors <- 
-plot.clpalette <- 
-plot.clpalettes <- 
-plot.clpattern <- 
-plot.clpatterns <- 
-function(x,type='png',...) {
+#' @rdname clpng
+#' @param type One of \dQuote{png} (the default) or \dQuote{pie}.
+#' @export
+plot.clcolor <- function(x,type='png',...) {
     if(type=='png')
         clpng(x, ...)
     else if(type=='pie')
         clpie(x, ...)
 }
+
+#' @export
+plot.clcolors <- plot.clcolor
+
+#' @export
+plot.clpalette <- plot.clcolor
+
+#' @export
+plot.clpalettes <- plot.clcolor
+
+#' @export
+plot.clpattern <- plot.clcolor
+
+#' @export
+plot.clpatterns <- plot.clcolor

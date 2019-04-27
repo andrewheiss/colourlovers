@@ -1,10 +1,52 @@
-cllover <- function(user, comments = FALSE, fmt = 'xml'){
-    # request a single lover/user
-    out <- list(lover=clquery('lover', user, query=list(comments=as.numeric(comments)), fmt=fmt)[[1]])[[1]]
-    class(out) <- c('cllover',class(out))
-    return(out)
-}
-
+#' Retrieve a user (lover)
+#' 
+#' Retrieve a lover (user) or set of lovers from the COLOURlovers API.
+#' 
+#' Retrieve details about a COLOURlovers user or users.
+#' 
+#' Specifying named arguments to \code{...} allows the user to request a
+#' specific response, as follows:
+#' 
+#' \itemize{
+#'   \item \code{orderCol}: A character string containing a sort criterion. One of
+#'         \dQuote{dateCreated}, \dQuote{score}, \dQuote{name}, \dQuote{numVotes},
+#'         \dQuote{numViews}.
+#'   \item \code{sortBy}: A character string containing either \dQuote{ASC} (for
+#'         ascending by the \code{orderCol} criterion, the default) or \dQuote{DSC}
+#'         (for descending).
+#'   \item \code{numResults}: A numeric value indicating the number of results to
+#'         return, with a maximum of 100. Default is 20.
+#'   \item \code{resultOffset}: A numeric value indicating the page of results to
+#'         return, with page size specified in the \code{numResults} argument.
+#' }
+#' 
+#' @param set Optionally, a subset of COLOURlovers palettes. Allowed values are
+#'   \dQuote{new} and \dQuote{top}.
+#' @param ... A named list of parameters passed to the API request. Allowed
+#'   parameters are \code{orderCol}, \code{sortBy}, \code{numResults}, and
+#'   \code{resultOffset}. Specifying \code{orderCol} overrules any argument to
+#'   \code{set}. See details.
+#' @param fmt A format for the API response, one of \dQuote{xml} (the default)
+#'   or \dQuote{json}. This has essentially no effect on function behavior.
+#' 
+#' @return A list of class \dQuote{cllover}, including details about one or
+#'   more users. This should be the same regardless of the value of \code{fmt}.
+#' 
+#' @export
+#' 
+#' @aliases cllover cllovers print.cllover print.cllovers
+#' 
+#' @author Thomas J. Leeper
+#' @references \url{http://www.colourlovers.com/api/#lovers}
+#' 
+#' @examples
+#' e <- function(e) NULL # function for tryCatch to fail in examples
+#' 
+#' # retrieve top users
+#' tryCatch( cllovers(set='top', fmt='json'), error = e)
+#' 
+#' # retrieve a single user
+#' tryCatch( cllover('COLOURlovers', fmt='json'), error = e)
 cllovers <- function(set = NULL, ..., fmt = 'xml'){
     # request multiple lovers
     if(!is.null(set))
@@ -44,6 +86,19 @@ cllovers <- function(set = NULL, ..., fmt = 'xml'){
     return(out)
 }
 
+#' @rdname cllovers
+#' @param user The COLOURlovers username for a specific user.
+#' @param comments A boolean indicating whether to include the last ten
+#'   comments for the user. Default is \code{FALSE}.
+#' @export
+cllover <- function(user, comments = FALSE, fmt = 'xml'){
+    # request a single lover/user
+    out <- list(lover=clquery('lover', user, query=list(comments=as.numeric(comments)), fmt=fmt)[[1]])[[1]]
+    class(out) <- c('cllover',class(out))
+    return(out)
+}
+
+#' @export
 print.cllover <- function(x,...) {
     cat('Lover username:     ', x$userName[[1]],'\n')
     cat('Registered:         ', x$dateRegistered,'\n')
@@ -62,4 +117,5 @@ print.cllover <- function(x,...) {
     invisible(x)
 }
 
+#' @export
 print.cllovers <- function(x,...) sapply(x, print)

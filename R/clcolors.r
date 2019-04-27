@@ -1,11 +1,66 @@
-clcolor <- function(hex, fmt='xml'){
-    # request a single color
-    out <- clquery('color', substring(gsub('#','',hex),1,6), fmt=fmt)[[1]]
-    class(out) <- c('clcolor',class(out))
-    return(out)
-}
-
-
+#' Retrieve color or colors
+#' 
+#' Retrieve a color or set of colors from the COLOURlovers API.
+#' 
+#' Retrieve details about a color our set of colors.
+#' 
+#' Specifying named arguments to \code{...} allows the user to request a
+#' specific response, as follows:
+#' 
+#' \itemize{
+#'   \item \code{lover}: A character string containing a COLOURlovers username.
+#'   \item \code{hueRange}: A two-element numeric vector containing the upper and lower
+#'         bounds of a hue range. Allowed values are between 0 and 359, exclusive.
+#'   \item \code{briRange}: A two-element numeric vector containing the upper and lower
+#'         bounds of a brightness range. Allowed values are between 0 and 99,
+#'         exclusive.
+#'   \item \code{keywords}: A character string containing one or more keywords to
+#'         search by.
+#'   \item \code{keywordsExact}: A boolean indicating search on keywords should be
+#'         exact (\code{TRUE}) or not (\code{FALSE}, the API default).
+#'   \item \code{orderCol}: A character string containing a sort criterion. One of
+#'         \dQuote{dateCreated}, \dQuote{score}, \dQuote{name}, \dQuote{numVotes},
+#'         \dQuote{numViews}.
+#'   \item \code{sortBy}: A character string containing either \dQuote{ASC} (for
+#'         ascending by the \code{orderCol} criterion, the default) or \dQuote{DSC}
+#'         (for descending).
+#'   \item \code{numResults}: A numeric value indicating the number of results to
+#'         return, with a maximum of 100. Default is 20.
+#'   \item \code{resultOffset}: A numeric value indicating the page of results to
+#'         return, with page size specified in the \code{numResults} argument.
+#' }
+#' 
+#' @param set Optionally, a subset of COLOURlovers colors. Allowed values are
+#'   \dQuote{new}, \dQuote{top}, and \dQuote{random}.
+#' @param ... A named list of parameters passed to the API request. Allowed
+#'   parameters are \code{lover}, \code{hueRange}, \code{briRange},
+#'   \code{keywords}, \code{keywordsExact}, \code{orderCol}, \code{sortBy},
+#'   \code{numResults}, and \code{resultOffset}. Specifying \code{orderCol}
+#'   overrules any argument to \code{set}. See details.
+#' @param fmt A format for the API response, one of \dQuote{xml} (the default)
+#'   or \dQuote{json}. This has essentially no effect on function behavior.
+#'   @return A list of class \dQuote{clcolor}. This should be the same regardless
+#'   of the value of \code{fmt}.
+#'
+#' @export
+#'
+#' @aliases clcolor clcolors print.clcolor print.clcolors
+#'
+#' @author Thomas J. Leeper
+#' @references \url{http://www.colourlovers.com/api/#colors}
+#' 
+#' @examples
+#' e <- function(e) NULL # function for tryCatch to fail in examples
+#' 
+#' # get a random color
+#' tryCatch( clcolors('random'), error = e)
+#' 
+#' # get a single color
+#' tryCatch( clcolor('6B4106'), error = e)
+#' 
+#' # plot a single color clpng
+#' co <- tryCatch( clcolor(rgb(0,0,1), fmt='json'), error = e)
+#' if(!is.null(co)) plot(co)
 clcolors <- function(set = NULL, ..., fmt='xml'){
     # request multiple colors
     if(!is.null(set))
@@ -87,6 +142,17 @@ clcolors <- function(set = NULL, ..., fmt='xml'){
     return(out)
 }
 
+#' @rdname clcolors
+#' @param hex The six-character hexidemical representation of a single color.
+#' @export
+clcolor <- function(hex, fmt='xml'){
+    # request a single color
+    out <- clquery('color', substring(gsub('#','',hex),1,6), fmt=fmt)[[1]]
+    class(out) <- c('clcolor',class(out))
+    return(out)
+}
+
+#' @export
 print.clcolor <- function(x,...) {
     cat('Pattern ID:     ', x$id,'\n')
     cat('Title:          ', x$title,'\n')
@@ -105,4 +171,5 @@ print.clcolor <- function(x,...) {
     invisible(x)
 }
 
+#' @export
 print.clcolors <- function(x,...) sapply(x, print)

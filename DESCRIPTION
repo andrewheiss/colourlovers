@@ -20,4 +20,5 @@ Description: Provides access to the COLOURlovers <http://www.colourlovers.com/>
 License: GPL-2
 URL: https://github.com/leeper/colourlovers
 BugReports: https://github.com/leeper/colourlovers/issues
-RoxygenNote: 5.0.1
+Encoding: UTF-8
+RoxygenNote: 6.1.1

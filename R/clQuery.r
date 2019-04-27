@@ -1,3 +1,21 @@
+#' Execute an API Query
+#' 
+#' Primarily an internal function for executing API calls.
+#' 
+#' Primarily for internal use.
+#' 
+#' @param type An API type. One of \dQuote{colors}, \dQuote{palettes},
+#' \dQuote{patterns}, \dQuote{lovers}, or \dQuote{stats}.
+#' @param set A further subtype of the API \code{type}.
+#' @param query An optional character string specifying additional query
+#' parameters.
+#' @param fmt A format for the API response, one of \dQuote{xml} (the default)
+#' or \dQuote{json}.
+#' @param ... Ignored.
+#' @return A list reflecting the API response. This should be the same
+#' regardless of the vale of \code{fmt}.
+#' @author Thomas J. Leeper
+#' @export clquery
 clquery <- function(type, set = NULL, query = NULL, fmt = 'xml', ...){
     # API workhorse query function
     if(!type %in% c('color', 'colors',
