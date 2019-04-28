@@ -27,33 +27,37 @@ clquery <- function(type, set = NULL, query = NULL, fmt = 'xml', ...) {
                     'stats'))
         warning("API type not recognized")
     
+    # Build URL query
     url <- paste('http://www.colourlovers.com/api/', type, sep = "")
+    
+    # Add set if present (new, top, random)
     if (!is.null(set)) {
         url <- paste(url, set, sep = "/")
     }
     
+    # Add format
     if (is.null(fmt) || !fmt %in% c('xml', 'json')) {
         warning('fmt is missing or incorrect; xml used by default')
         fmt <- 'xml'
     }
     url <- paste(url, '?format=', fmt, sep = '')
-    # handle parameters
+    
+    # Add parameters (named list documented in various cl*() functions)
     query <- paste(names(query), query, sep = '=', collapse = '&')
     url <- paste(url, query, sep = "&")
     
-    #response <- getURL(url, followlocation = 1L, ...)
-    urlcon <- url(url)
-    response <- paste(readLines(urlcon, warn = FALSE), collapse = '')
-    close(urlcon)
+    # Make actual HTTP call
+    response <- GET(url)
     
-    # handle json or xml
+    # Handle json or xml response
     if (fmt == 'xml') {
         p <- xmlParse(response, options = XML::NOCDATA)
         out <- xmlToList(p, addAttributes = FALSE)
     } else if (fmt == 'json') {
-        out <- fromJSON(response, simplifyVector = FALSE)
-    } else
+        out <- fromJSON(content(response, "text"), simplifyVector = FALSE)
+    } else {
         out <- response
+    }
     
     return(out)
 }

@@ -7,9 +7,10 @@ Authors@R: c(person("Thomas J.", "Leeper",
                     email = "thosjleeper@gmail.com",
                     comment = c(ORCID = "0000-0003-4097-6326"))
              )
-Imports:
+Imports: 
     XML,
     jsonlite,
+    httr,
     png,
     graphics,
     utils
