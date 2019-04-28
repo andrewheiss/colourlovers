@@ -1,0 +1,29 @@
+[
+    {
+        "id": 34152,
+        "title": "H, S & B",
+        "userName": "serafim",
+        "numViews": 583,
+        "numVotes": 5,
+        "numComments": 4,
+        "numHearts": 0,
+        "rank": 0,
+        "dateCreated": "2005-12-15 08:07:52",
+        "hex": "408080",
+        "rgb": {
+            "red": 64,
+            "green": 128,
+            "blue": 128
+        },
+        "hsv": {
+            "hue": 180,
+            "saturation": 50,
+            "value": 50
+        },
+        "description": "<a href=\"http://www.colourlovers.com/color/69636F/Store_me_Storm\" target=\"_blank\"><img src=\"http://static.colourlovers.com/images/colors/2618/2618826i.jpg\" /><\/a><a href=\"http://www.colourlovers.com/color/A79DA9/Not_Flying_Elephant\" target=\"_blank\"><img src=\"http://static.colourlovers.com/images/colors/2620/2620182i.jpg\" /><\/a>\r\n<div style=\"max-width: 400px ;margin-left: auto; margin-right: auto; text-align: center; color:#ebf2f5; border: 4px dotted #6b6b6b; font-size:112%; font-family:palatino linotype, palatino, serif; line-height:1.5; padding:12px; background-color: #1b1b1f; background-image: -moz-linear-gradient(top, #1b1b1f, #31314a); background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #1b1b1f),color-stop(1, #31314a)); filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=",
+        "url": "http://www.colourlovers.com/color/408080/H_S_B",
+        "imageUrl": "http://www.colourlovers.com/img/408080/100/100/H_S_B.png",
+        "badgeUrl": "http://www.colourlovers.com/images/badges/c/34/34152_H_S_B.png",
+        "apiUrl": "http://www.colourlovers.com/api/color/408080"
+    }
+]
