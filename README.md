@@ -68,14 +68,14 @@ swatch(clcolors('random'))
 ```
 
     ## [[1]]
-    ## [1] "#63945F"
+    ## [1] "#28F6A5"
 
 ``` r
 swatch(clpalettes('random'))
 ```
 
     ## [[1]]
-    ## [1] "#241D33" "#570D31" "#05274D" "#420E27" "#033E4D"
+    ## [1] "#C3FEFF" "#90D8D5" "#5F9699" "#4B5D61" "#3F2D2D"
 
 ### Get Colors
 
@@ -91,7 +91,7 @@ clcolors('top')[[1]]
     ## Title:           Black 
     ## Created by user: ninjascience 
     ## Date created:    2004-12-17 08:36:26 
-    ## Views:           147142 
+    ## Views:           147148 
     ## Votes:           1511 
     ## Comments:        1788 
     ## Hearts:          4.5 
@@ -133,7 +133,7 @@ clcolor(hsv(.5,.5,.5))
     ## Title:           H, S & B 
     ## Created by user: serafim 
     ## Date created:    2005-12-15 08:07:52 
-    ## Views:           582 
+    ## Views:           583 
     ## Votes:           5 
     ## Comments:        4 
     ## Hearts:          0 
@@ -150,7 +150,7 @@ clcolor(rgb(0, 1, 0, .5))
     ## Title:           Primary Green 
     ## Created by user: il morto 
     ## Date created:    2005-07-04 09:53:05 
-    ## Views:           4388 
+    ## Views:           4396 
     ## Votes:           61 
     ## Comments:        32 
     ## Hearts:          0 
@@ -241,7 +241,7 @@ clpatterns('top')[[1]]
     ## Title:           0479 
     ## Created by user: as warning 
     ## Date created:    2014-07-06 03:13:02 
-    ## Views:           3124 
+    ## Views:           3129 
     ## Votes:           16777215 
     ## Comments:        0 
     ## Hearts:          0 
@@ -312,7 +312,7 @@ or install the latest development version from GitHub using:
 if (!require("remotes")) {
     install.packages("remotes")
 }
-remotes::install_github("leeper/colourlovers")
+remotes::install_github("andrewheiss/colourlovers")
 ```
 
 # Community guidelines

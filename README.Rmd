@@ -22,7 +22,7 @@ palette3 <- clpalette('629637')
 palette4 <- clpalette('694737')
 ```
 
-```R
+```r
 layout(matrix(1:4, nrow=2))
 par(mar=c(2,2,2,2))
 barplot(VADeaths, col = swatch(palette1)[[1]], border = NA)
@@ -73,7 +73,7 @@ The response includes RGB and HSV representations of the requested color, a URL 
 
 Here's an example of the image URL at work, using the `plot` method for a `clcolor` object:
 
-```R
+```r
 plot(clcolor('00FF00'))
 ```
 
@@ -85,7 +85,7 @@ Palettes are sets of colors created by COLOURlovers users. They show potentially
 
 Two functions are provided for using palettes. One, `clpalettes` (in plural form), searches for palettes by user, hue(s), color(s) (in hexidecimal representation), or keyword(s).
 
-```R
+```r
 top <- clpalettes('top')
 # plot all top palettes (interactively)
 plot(top)
@@ -97,7 +97,7 @@ swatch(top)
 
 The other function, `clpalette()` (in singular form), retrieves a pattern by its identifying number.
 
-```R
+```r
 palette1 <- clpalette('113451')
 # plot the palette
 plot(palette1)
@@ -130,7 +130,7 @@ The response includes the creator's username, COLOURlovers ratings (views, votes
 
 Here's an example of the image URL at work (credit "Geek Chic" (1451) by _183):
 
-```R
+```r
 plot(clpattern('1451'))
 ```
 
@@ -156,17 +156,17 @@ The **colourlovers** package is released under GPL-2, while the COLOURlovers com
 You can find a stable release on [CRAN](https://cran.r-project.org/package=colourlovers):
 
 
-```R
+```r
 install.packages("colourlovers")
 ```
 
 or install the latest development version from GitHub using:
 
-```R
+```r
 if (!require("remotes")) {
     install.packages("remotes")
 }
-remotes::install_github("leeper/colourlovers")
+remotes::install_github("andrewheiss/colourlovers")
 ```
 
 # Community guidelines
