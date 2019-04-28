@@ -57,15 +57,14 @@
 #' @author Thomas J. Leeper
 #' @references \url{http://www.colourlovers.com/api/#patterns}
 #' 
-#' @examples
-#' e <- function(e) NULL # function for tryCatch to fail in examples
+#' @examples \dontrun{
+#' # Get a random pattern
+#' clpatterns('random')
 #' 
-#' # get a random pattern
-#' tryCatch( clpatterns('random'), error = e)
-#' 
-#' # plot at a single pattern
-#' p <- tryCatch( clpattern('1451', fmt='json'), error = e)
-#' if(!is.null(p)) plot(p)
+#' # Plot a single pattern
+#' p <- clpattern('1451', fmt = 'json')
+#' plot(p)
+#' }
 clpatterns <- function(set = NULL, ..., fmt = 'xml') {
     # request multiple patterns
     if (!is.null(set)) {

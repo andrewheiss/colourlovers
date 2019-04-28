@@ -73,18 +73,18 @@ specific response, as follows:
 }
 }
 \examples{
-e <- function(e) NULL # function for tryCatch to fail in examples
+\dontrun{
+# Get a random palette
+clpalettes('random')
 
-# get a random palette
-tryCatch( clpalettes('random'), error = e)
+# Download top palettes
+clpalettes('top', fmt = 'json')
 
-# download top palettes
-tryCatch( clpalettes('top', fmt='json'), error = e)
-
-# plot at a single palette
+# Plot a single palette
 pid <- '113451'
-p <- tryCatch( clpalette(pid, fmt='json'), error = e)
-if(!is.null(p)) plot(p)
+p <- clpalette(pid, fmt = 'json')
+plot(p)
+}
 }
 \references{
 \url{http://www.colourlovers.com/api/#palettes}

@@ -61,17 +61,16 @@ specific response, as follows:
 }
 }
 \examples{
-e <- function(e) NULL # function for tryCatch to fail in examples
+\dontrun{
+# Get a random color
+clcolors('random')
 
-# get a random color
-tryCatch( clcolors('random'), error = e)
+# Get a single color
+clcolor('6B4106')
 
-# get a single color
-tryCatch( clcolor('6B4106'), error = e)
-
-# plot a single color clpng
-co <- tryCatch( clcolor(rgb(0,0,1), fmt='json'), error = e)
-if(!is.null(co)) plot(co)
+# Plot a single color
+clcolor(rgb(0,0,1), fmt = 'json')
+}
 }
 \references{
 \url{http://www.colourlovers.com/api/#colors}

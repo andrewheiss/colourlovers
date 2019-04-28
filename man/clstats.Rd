@@ -16,8 +16,8 @@ or \dQuote{json}. This has essentially no effect on function behavior.}
 }
 \value{
 A list of class \dQuote{clstats} containing at least one named
-element (\dQuote{total}). This should be the same regardless of the value of
-\code{fmt}.
+  element (\dQuote{total}). This should be the same regardless of the value 
+  of \code{fmt}.
 }
 \description{
 Retrieve basic statistics from the COLOURlovers API.
@@ -26,14 +26,12 @@ Retrieve basic statistics from the COLOURlovers API.
 Retrieve total numbers of colors, palettes, patterns, or lovers.
 }
 \examples{
-
-e <- function(e) NULL # function for tryCatch to fail in examples
-
-tryCatch( clstats('colors'), error = e)
-tryCatch( clstats('palettes'), error = e)
-tryCatch( clstats('patterns'), error = e)
-tryCatch( clstats('lovers'), error = e)
-
+\dontrun{ 
+clstats('colors')
+clstats('palettes')
+clstats('patterns')
+clstats('lovers')
+}
 }
 \references{
 \url{http://www.colourlovers.com/api/#stats}

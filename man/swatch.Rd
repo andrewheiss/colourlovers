@@ -22,17 +22,16 @@ Extract a list of colors from a COLOURlovers object
 Extract color(s) from a colourlovers object.
 }
 \examples{
-e <- function(e) NULL # function for tryCatch to fail in examples
+\dontrun{
+# Get top colors
+swatch(clcolors('top'))
 
-# get top colors
-tryCatch( swatch(clcolors('top')), error = e)
+# Get colors from a specific palette
+swatch(clpalette('113451'))
 
-# get colors from a specific palette
-tryCatch( swatch(clpalette('113451')), error = e)
-
-# get colors from specific pattern
-tryCatch( swatch(clpattern('1451')), error = e)
-
+# Get colors from specific pattern
+swatch(clpattern('1451'))
+}
 }
 \author{
 Thomas J. Leeper

@@ -35,28 +35,25 @@ device
 Plot a colourlovers PNG image in a new plotting window.
 }
 \examples{
-e <- function(e) NULL # function for tryCatch to fail in examples
-
-# plot a color clpng
-co <- tryCatch( clcolor(rgb(0,0,1)), error = e)
-if(!is.null(co)) plot(co)
-
-# plot a pattern clpng
-p <- tryCatch( clpattern('1451'), error = e)
-if(!is.null(p)) plot(p)
-if(!is.null(p)) clpng(p)
-
-# plot colors from a palette
-p <- tryCatch( clpalette('113451'), error = e)
-if(!is.null(p)) plot(p, type='pie')
-if(!is.null(p)) clpie(p)
-
-
 \dontrun{
-# plot multiple palettes (interactively)
-p <- tryCatch( clpalettes('top'), error = e)
-if(!is.null(p)) plot(p) # PNG images
-if(!is.null(p)) plot(p, type='pie') # pie chart swatches
+# Plot a color clpng
+co <- clcolor(rgb(0,0,1))
+plot(co)
+
+# Plot a pattern clpng
+p <- clpattern('1451')
+plot(p)
+clpng(p)
+
+# Plot colors from a palette
+p <- clpalette('113451')
+plot(p, type = 'pie')
+clpie(p)
+
+# Plot multiple palettes (interactively)
+p <- clpalettes('top')
+plot(p) #  PNG images
+plot(p, type = 'pie')  # pie chart swatches
 }
 
 }

@@ -70,14 +70,14 @@ specific response, as follows:
 }
 }
 \examples{
-e <- function(e) NULL # function for tryCatch to fail in examples
+\dontrun{
+# Get a random pattern
+clpatterns('random')
 
-# get a random pattern
-tryCatch( clpatterns('random'), error = e)
-
-# plot at a single pattern
-p <- tryCatch( clpattern('1451', fmt='json'), error = e)
-if(!is.null(p)) plot(p)
+# Plot a single pattern
+p <- clpattern('1451', fmt = 'json')
+plot(p)
+}
 }
 \references{
 \url{http://www.colourlovers.com/api/#patterns}

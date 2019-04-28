@@ -57,19 +57,18 @@
 #' @author Thomas J. Leeper
 #' @references \url{http://www.colourlovers.com/api/#palettes}
 #' 
-#' @examples
-#' e <- function(e) NULL # function for tryCatch to fail in examples
+#' @examples \dontrun{
+#' # Get a random palette
+#' clpalettes('random')
 #' 
-#' # get a random palette
-#' tryCatch( clpalettes('random'), error = e)
+#' # Download top palettes
+#' clpalettes('top', fmt = 'json')
 #' 
-#' # download top palettes
-#' tryCatch( clpalettes('top', fmt='json'), error = e)
-#' 
-#' # plot at a single palette
+#' # Plot a single palette
 #' pid <- '113451'
-#' p <- tryCatch( clpalette(pid, fmt='json'), error = e)
-#' if(!is.null(p)) plot(p)
+#' p <- clpalette(pid, fmt = 'json')
+#' plot(p)
+#' }
 clpalettes <- function(set = NULL, ..., fmt = 'xml') {
     # request multiple palettes
     if (!is.null(set)) {

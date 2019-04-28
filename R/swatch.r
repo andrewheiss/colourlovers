@@ -9,22 +9,21 @@
 #' 
 #' @return A list of character vectors containing hexidecimal representations
 #'   of colors.
+#' 
+#' @export
 #'   
 #' @author Thomas J. Leeper
 #' 
-#' @examples
-#' e <- function(e) NULL # function for tryCatch to fail in examples
+#' @examples \dontrun{
+#' # Get top colors
+#' swatch(clcolors('top'))
 #' 
-#' # get top colors
-#' tryCatch( swatch(clcolors('top')), error = e)
+#' # Get colors from a specific palette
+#' swatch(clpalette('113451'))
 #' 
-#' # get colors from a specific palette
-#' tryCatch( swatch(clpalette('113451')), error = e)
-#' 
-#' # get colors from specific pattern
-#' tryCatch( swatch(clpattern('1451')), error = e)
-#' 
-#' @export
+#' # Get colors from specific pattern
+#' swatch(clpattern('1451'))
+#' }
 swatch <- function(x, ...) {
     # extract colors from a COLOURlovers object and return them in hex
     s1 <- inherits(x, 'clpalette') | inherits(x, 'clpattern')

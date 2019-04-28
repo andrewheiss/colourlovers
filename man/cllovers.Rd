@@ -55,13 +55,13 @@ specific response, as follows:
 }
 }
 \examples{
-e <- function(e) NULL # function for tryCatch to fail in examples
+\dontrun{
+# Retrieve top users
+cllovers(set = 'top', fmt = 'json')
 
-# retrieve top users
-tryCatch( cllovers(set='top', fmt='json'), error = e)
-
-# retrieve a single user
-tryCatch( cllover('COLOURlovers', fmt='json'), error = e)
+# Retrieve a single user
+cllover('COLOURlovers', fmt = 'json')
+}
 }
 \references{
 \url{http://www.colourlovers.com/api/#lovers}
