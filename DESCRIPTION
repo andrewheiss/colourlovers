@@ -14,7 +14,8 @@ Imports:
     png,
     graphics,
     utils
-Suggests:
+Suggests: 
+    httptest,
     testthat
 Description: Provides access to the COLOURlovers <http://www.colourlovers.com/>
     API, which offers color inspiration and color palettes.

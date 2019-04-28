@@ -1,0 +1,3 @@
+library(httptest)
+
+httptest::.mockPaths("../")
