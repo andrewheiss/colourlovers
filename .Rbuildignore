@@ -1,5 +1,6 @@
 .travis.yml
-README.Rmd
+^README\.Rmd$
+^README-.*\.png$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^CODE_OF_CONDUCT\.md$
