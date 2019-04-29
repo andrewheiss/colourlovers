@@ -42,10 +42,19 @@ Note that the `clcolor()`, `clcolors()`, `clpalette()`, `clpalettes()`, `clpatte
 
 Additionally the `swatch` function extracts colors returned by any of those functions to make them easily usable in subsequent graphics calls. For example:
 
-```{r}
+```{r eval=FALSE}
 swatch(clcolors('random'))
+```
+
+    ## [[1]]
+    ## [1] "#88A58D"
+
+```{r eval=FALSE}
 swatch(clpalettes('random'))
 ```
+
+    ## [[1]]
+    ## [1] "#FFE7D1" "#D4CEAA" "#74BCA4" "#45A0A5" "#374313"
 
 ### Get Colors
 
