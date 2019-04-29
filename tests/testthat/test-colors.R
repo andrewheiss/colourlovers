@@ -48,7 +48,7 @@ with_mock_api({
     expect_success(expect_error(clcolors(set = "new", hueRange = c(-5, 50)),
                                 label = "negative lower bound breaks"))
     expect_success(expect_error(clcolors(set = "new", hueRange = c(20, 500)),
-                                label = "high lupper bound breaks"))
+                                label = "high upper bound breaks"))
     
     c_hues <- clcolors(set = "new", hueRange = c(20, 50), numResults = 5)
     c_hue_values <- sapply(c_hues, function(x) as.numeric(x$hsv$hue))
