@@ -3,6 +3,12 @@
 
 # Client for the COLOURlovers API
 
+[![CRAN
+Version](https://www.r-pkg.org/badges/version/colourlovers)](https://cran.r-project.org/package=colourlovers)
+![Downloads](https://cranlogs.r-pkg.org/badges/colourlovers) [![Build
+Status](https://travis-ci.org/andrewheiss/colourlovers.png?branch=master)](https://travis-ci.org/andrewheiss/colourlovers)
+[![codecov.io](https://codecov.io/github/andrewheiss/colourlovers/coverage.svg?branch=master)](https://codecov.io/github/andrewheiss/colourlovers?branch=master)
+
 The **colourlovers** package connects R to the
 [COLOURlovers](http://www.colourlovers.com/) API. COLOURlovers is a
 social networking site for sharing colors, color palettes, and
@@ -11,6 +17,25 @@ mean that COLOURlovers provides not only rich, original color palettes
 to use in R graphics but also provides ratings and community evaluations
 of those palettes, helping R graphics designers to utilize visually
 pleasing color combinations.
+
+## Installation
+
+You can find a stable release on
+[CRAN](https://cran.r-project.org/package=colourlovers):
+
+``` r
+install.packages("colourlovers")
+```
+
+or install the latest development version from GitHub using:
+
+``` r
+if (!require("remotes")) {
+  install.packages("remotes")
+}
+
+remotes::install_github("andrewheiss/colourlovers")
+```
 
 ## Using colourlovers in R graphics
 
@@ -284,31 +309,6 @@ COLOURlovers community-generated data returned by the API is available
 under the [Creative Commons
 Attribution-NonCommercial-ShareAlike 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/)
 license.
-
-## Installation
-
-[![CRAN
-Version](https://www.r-pkg.org/badges/version/colourlovers)](https://cran.r-project.org/package=colourlovers)
-![Downloads](https://cranlogs.r-pkg.org/badges/colourlovers) [![Build
-Status](https://travis-ci.org/andrewheiss/colourlovers.png?branch=master)](https://travis-ci.org/andrewheiss/colourlovers)
-[![codecov.io](https://codecov.io/github/andrewheiss/colourlovers/coverage.svg?branch=master)](https://codecov.io/github/andrewheiss/colourlovers?branch=master)
-
-You can find a stable release on
-[CRAN](https://cran.r-project.org/package=colourlovers):
-
-``` r
-install.packages("colourlovers")
-```
-
-or install the latest development version from GitHub using:
-
-``` r
-if (!require("remotes")) {
-  install.packages("remotes")
-}
-
-remotes::install_github("andrewheiss/colourlovers")
-```
 
 ## Community guidelines
 
