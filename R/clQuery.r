@@ -43,9 +43,11 @@ clquery <- function(type, set = NULL, query = NULL, fmt = 'xml', ...) {
     url <- paste(url, '?format=', fmt, sep = '')
     
     # Add parameters (named list documented in various cl*() functions)
-    query <- paste(names(query), query, sep = '=', collapse = '&')
+    # query <- paste(names(query), query, sep = '=', collapse = '&')
+    query <- paste(names(query), sapply(query, paste0, collapse = ","), 
+                   sep = '=', collapse = '&')
     url <- paste(url, query, sep = "&")
-    
+
     # Make actual HTTP call
     response <- GET(url)
     
@@ -55,8 +57,6 @@ clquery <- function(type, set = NULL, query = NULL, fmt = 'xml', ...) {
         out <- xmlToList(p, addAttributes = FALSE)
     } else if (fmt == 'json') {
         out <- fromJSON(content(response, "text"), simplifyVector = FALSE)
-    } else {
-        out <- response
     }
     
     return(out)
