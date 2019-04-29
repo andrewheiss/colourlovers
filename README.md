@@ -71,7 +71,7 @@ barplot(VADeaths, col = swatch(palette3)[[1]], border = NA)
 barplot(VADeaths, col = swatch(palette4)[[1]], border = NA)
 ```
 
-<img src="README-barplot-grid-1.png" width="864" />
+<img src="tools/README-barplot-grid-1.png" width="864" />
 
  
 
@@ -203,7 +203,7 @@ a `clcolor` object:
 plot(clcolor('00FF00'))
 ```
 
-<img src="README-single-color-1.png" width="480" />
+<img src="tools/README-single-color-1.png" width="480" />
 
 ### Get Palettes
 
@@ -239,7 +239,7 @@ palette1 <- clpalette('113451')
 plot(palette1)
 ```
 
-<img src="README-single-palette-1.png" width="480" />
+<img src="tools/README-single-palette-1.png" width="480" />
 
 ### Get Patterns (Designs)
 
@@ -290,7 +290,7 @@ Here’s an example of the image URL at work (credit “Geek Chic” (1451) by
 plot(clpattern('1451'))
 ```
 
-<img src="README-pattern-1.png" width="480" />
+<img src="tools/README-pattern-1.png" width="480" />
 
 Using `plot(clpattern('1451'), type = 'pie')`, the `plot` method
 extracts the `swatch` for the pattern (or a palette or color) and
@@ -300,7 +300,7 @@ displays the results as a pie chart, with each color labeled:
 plot(clpattern('1451'), type = 'pie')
 ```
 
-<img src="README-pattern-pie-1.png" width="480" />
+<img src="tools/README-pattern-pie-1.png" width="480" />
 
 ## License
 
