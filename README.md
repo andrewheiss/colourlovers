@@ -68,14 +68,14 @@ swatch(clcolors('random'))
 ```
 
     ## [[1]]
-    ## [1] "#28F6A5"
+    ## [1] "#88A58D"
 
 ``` r
 swatch(clpalettes('random'))
 ```
 
     ## [[1]]
-    ## [1] "#C3FEFF" "#90D8D5" "#5F9699" "#4B5D61" "#3F2D2D"
+    ## [1] "#FFE7D1" "#D4CEAA" "#74BCA4" "#45A0A5" "#374313"
 
 ### Get Colors
 
@@ -91,7 +91,7 @@ clcolors('top')[[1]]
     ## Title:           Black 
     ## Created by user: ninjascience 
     ## Date created:    2004-12-17 08:36:26 
-    ## Views:           147148 
+    ## Views:           147150 
     ## Votes:           1511 
     ## Comments:        1788 
     ## Hearts:          4.5 
@@ -241,7 +241,7 @@ clpatterns('top')[[1]]
     ## Title:           0479 
     ## Created by user: as warning 
     ## Date created:    2014-07-06 03:13:02 
-    ## Views:           3129 
+    ## Views:           3130 
     ## Votes:           16777215 
     ## Comments:        0 
     ## Hearts:          0 
@@ -296,8 +296,8 @@ license.
 [![CRAN
 Version](https://www.r-pkg.org/badges/version/colourlovers)](https://cran.r-project.org/package=colourlovers)
 ![Downloads](https://cranlogs.r-pkg.org/badges/colourlovers) [![Build
-Status](https://travis-ci.org/leeper/colourlovers.png?branch=master)](https://travis-ci.org/leeper/colourlovers)
-[![codecov.io](https://codecov.io/github/leeper/colourlovers/coverage.svg?branch=master)](https://codecov.io/github/leeper/colourlovers?branch=master)
+Status](https://travis-ci.org/andrewheiss/colourlovers.png?branch=master)](https://travis-ci.org/andrewheiss/colourlovers)
+[![codecov.io](https://codecov.io/github/andrewheiss/colourlovers/coverage.svg?branch=master)](https://codecov.io/github/andrewheiss/colourlovers?branch=master)
 
 You can find a stable release on
 [CRAN](https://cran.r-project.org/package=colourlovers):
