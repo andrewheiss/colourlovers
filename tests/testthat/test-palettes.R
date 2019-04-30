@@ -120,10 +120,10 @@ with_mock_api({
     expect_equal(length(p_multiple_output), 26,
                  label = "(multiple) print output is correct length")
     expect_match(p_multiple_output[1], "Palette ID:",
-                 label = "(multiple; first color) palette ID is first")
+                 label = "(multiple; first palette) palette ID is first")
     expect_match(p_multiple_output[12], "Colors:",
-                 label = "(multiple; first color) color is last")
+                 label = "(multiple; first palette) color is last")
     expect_match(p_multiple_output[14], "Palette ID:",
-                 label = "(multiple; second color) palette ID is first")
+                 label = "(multiple; second palette) palette ID is first")
   })
 })
