@@ -86,7 +86,7 @@ clpng <- function(x, ask = TRUE, ...) {
 
 #' @rdname clpng
 #' @export
-clpie <- function(x, ask = FALSE, ...) {
+clpie <- function(x, ask = TRUE, ...) {
     # extract colors a COLOURlovers object and print a pie of them
     s1 <- inherits(x, 'clcolor') | inherits(x, 'clpalette') | inherits(x, 'clpattern')
     s2 <- inherits(x, 'clcolors') | inherits(x, 'clpalettes') | inherits(x, 'clpatterns')

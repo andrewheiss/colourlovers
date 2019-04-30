@@ -13,7 +13,7 @@
 \usage{
 clpng(x, ask = TRUE, ...)
 
-clpie(x, ask = FALSE, ...)
+clpie(x, ask = TRUE, ...)
 
 \method{plot}{clcolor}(x, type = "png", ...)
 }
