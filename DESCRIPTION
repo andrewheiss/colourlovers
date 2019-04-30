@@ -20,7 +20,8 @@ Imports:
     utils
 Suggests: 
     httptest,
-    testthat
+    testthat,
+    vdiffr
 Description: Provides access to the COLOURlovers <http://www.colourlovers.com/>
     API, which offers color inspiration and color palettes.
 License: GPL-2

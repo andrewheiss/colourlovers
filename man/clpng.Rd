@@ -11,14 +11,17 @@
 \alias{plot.clpatterns}
 \title{Plot a COLOURlovers object}
 \usage{
-clpng(x, ...)
+clpng(x, ask = TRUE, ...)
 
-clpie(x, ...)
+clpie(x, ask = FALSE, ...)
 
 \method{plot}{clcolor}(x, type = "png", ...)
 }
 \arguments{
 \item{x}{A colourlovers color, palette, or pattern object.}
+
+\item{ask}{A boolean indicating if plots should be presented interactively 
+or all at once (default is \code{FALSE}).}
 
 \item{\dots}{Ignored.}
 
@@ -37,7 +40,7 @@ Plot a colourlovers PNG image in a new plotting window.
 \examples{
 \dontrun{
 # Plot a color clpng
-co <- clcolor(rgb(0,0,1))
+co <- clcolor(rgb(0, 0, 1))
 plot(co)
 
 # Plot a pattern clpng

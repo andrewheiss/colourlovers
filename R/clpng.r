@@ -6,6 +6,8 @@
 #' Plot a colourlovers PNG image in a new plotting window.
 #' 
 #' @param x A colourlovers color, palette, or pattern object.
+#' @param ask A boolean indicating if plots should be presented interactively 
+#'   or all at once (default is \code{FALSE}).
 #' @param \dots Ignored.
 #' 
 #' @return The \code{x} object is invisibly returned.
@@ -19,7 +21,7 @@
 #' 
 #' @examples \dontrun{
 #' # Plot a color clpng
-#' co <- clcolor(rgb(0,0,1))
+#' co <- clcolor(rgb(0, 0, 1))
 #' plot(co)
 #' 
 #' # Plot a pattern clpng
@@ -38,7 +40,7 @@
 #' plot(p, type = 'pie')  # pie chart swatches
 #' }
 #' 
-clpng <- function(x, ...) {
+clpng <- function(x, ask = TRUE, ...) {
     # extract an imageUrl from a COLOURlovers object and print a clpng
     s1 <- inherits(x, 'clcolor') | inherits(x, 'clpalette') | inherits(x, 'clpattern')
     s2 <- inherits(x, 'clcolors') | inherits(x, 'clpalettes') | inherits(x, 'clpatterns')
@@ -51,9 +53,9 @@ clpng <- function(x, ...) {
             par(mar = c(1, 1, 2, 1))
     } else if (s2) {
         if (inherits(x, 'clpalette'))
-            par(mar = c(2, 1, 2, 1), ask = TRUE)
+            par(mar = c(2, 1, 2, 1), ask = ask)
         else
-            par(mar = c(1, 1, 2, 1), ask = TRUE)
+            par(mar = c(1, 1, 2, 1), ask = ask)
         sapply(x, clpng)
         return(invisible(x))
     }
@@ -84,7 +86,7 @@ clpng <- function(x, ...) {
 
 #' @rdname clpng
 #' @export
-clpie <- function(x, ...) {
+clpie <- function(x, ask = FALSE, ...) {
     # extract colors a COLOURlovers object and print a pie of them
     s1 <- inherits(x, 'clcolor') | inherits(x, 'clpalette') | inherits(x, 'clpattern')
     s2 <- inherits(x, 'clcolors') | inherits(x, 'clpalettes') | inherits(x, 'clpatterns')
@@ -107,7 +109,7 @@ clpie <- function(x, ...) {
         
         return(invisible(x))
     } else if (s2) {
-        par(mar = c(1, 1, 2, 1), ask = TRUE)
+        par(mar = c(1, 1, 2, 1), ask = ask)
         sapply(x, clpie)
         return(invisible(x))
     }
