@@ -62,14 +62,14 @@ clpng <- function(x, ask = TRUE, ...) {
     
     tmp <- tempfile()
     download.file(u, tmp, quiet = TRUE, mode = 'wb')
+    
+    m <- ''
     if (inherits(x, 'clcolor')) {
         m <- paste('Color #', x$hex, sep = '')
     } else if (inherits(x, 'clpalette')) {
         m <- paste('Palette #', x$id, sep = '')
     } else if (inherits(x, 'clpattern')) {
         m <- paste('Pattern #', x$id, sep = '')
-    } else {
-        m <- ''
     }
     
     plot(1:2, type = 'n', bty = 'n', xlab = '', ylab = '',
@@ -95,14 +95,13 @@ clpie <- function(x, ask = TRUE, ...) {
         u <- swatch(x)[[1]]
         par(mar = c(1, 1, 2, 1))
         
+        m <- ''
         if (inherits(x, 'clcolor')) {
             m <- paste('Color #', x$hex, sep = '')
         } else if (inherits(x, 'clpalette')) {
             m <- paste('Palette #', x$id, sep = '')
         } else if (inherits(x, 'clpattern')) {
             m <- paste('Pattern #', x$id, sep = '')
-        } else{
-            m <- ''
         }
         
         pie(rep(1, length(u)), labels = u, border = NA, col = u, main = m)

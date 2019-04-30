@@ -53,8 +53,26 @@ with_mock_api({
   })
 })
 
-# Plot single palette
-# Plot multiple palettes
-
-# Plot single pattern
-# Plot multiple patterns
+with_mock_api({
+  test_that("Pattern plots work", {
+    testthat::skip_on_cran()
+    
+    disp_single_pattern <- function() plot(clpattern("5794648"))
+    vdiffr::expect_doppelganger("single pattern plot", disp_single_pattern)
+    
+    disp_multiple_patterns <- function() plot(clpatterns(set = "top", 
+                                                         lover = "Skyblue2u", 
+                                                         numResults = 1), 
+                                              ask = FALSE)
+    vdiffr::expect_doppelganger("multiple pattern plots", disp_multiple_patterns)
+    
+    disp_pie_pattern <- function()  plot(clpattern("5794648"), type = "pie")
+    vdiffr::expect_doppelganger("single pattern pie chart", disp_pie_pattern)
+    
+    disp_multiple_pie_patterns <- function() plot(clpatterns(set = "top", 
+                                                             lover = "Skyblue2u", 
+                                                             numResults = 1), 
+                                                  ask = FALSE, pie = TRUE)
+    vdiffr::expect_doppelganger("multiple pattern pie charts", disp_multiple_pie_patterns)
+  })
+})
