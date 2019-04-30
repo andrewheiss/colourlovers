@@ -80,7 +80,7 @@ cllovers <- function(set = NULL, ..., fmt = 'xml') {
             query$resultOffset <- 1
     }            
     
-    out <- clquery('lovers', set, query = NULL, fmt = fmt)
+    out <- clquery('lovers', set, query = query, fmt = fmt)
     names(out) <- rep('lover', length(out))
     class(out) <- c('cllovers', class(out))
     
