@@ -40,6 +40,29 @@ with_mock_api({
 })
 
 with_mock_api({
+  test_that("Number of results works", {
+    expect_equal(length(clcolors(set = "new", numResults = 5)), 5,
+                 label = "get specified number")
+    expect_equal(length(clcolors(set = "new", numResults = 150)), 20,
+                 label = "default to 20 if number is too high")
+    expect_equal(length(clcolors(set = "new", numResults = 0)), 20,
+                 label = "default to 20 if number is too low")
+    
+    expect_equal(length(clcolors(set = "new", numResults = 5, resultOffset = 10)), 5,
+                 label = "results work with offset")
+    expect_equal(length(clcolors(set = "new", numResults = 5, resultOffset = 0)), 5,
+                 label = "results work with weird offset")
+  })
+})
+
+with_mock_api({
+  test_that("Sorting and ordering work", {
+    expect_warning(clcolors(set = "new", numResults = 1, orderCol = "junk"))
+    expect_warning(clcolors(set = "new", numResults = 1, sortBy = "junk"))
+  })
+})
+
+with_mock_api({
   test_that("Hue range works", {
     expect_error(clcolors(set = "new", hueRange = c(5, 3, 2)), 
                  label = "more than three hue bounds breaks")
@@ -73,5 +96,56 @@ with_mock_api({
     
     expect_true(all(c_bri_values >= 10) && all(c_bri_values <= 30), 
                 label = "brightness values are within range")
+  })
+})
+
+with_mock_api({
+  test_that("Keywords work", {
+    c_orange <- clcolors(set = "new", keywords = "orange", numResults = 5)
+    expect_equal(length(c_orange), 5, label = "single keyword works")
+    
+    c_spring <- clcolors(set = "new", keywords = "spring flower", numResults = 5)
+    expect_equal(length(c_spring), 5, label = "multiple keywords work")
+  })
+})
+
+with_mock_api({
+  test_that("Keyword exactness works", {
+    expect_warning(clcolors(set = "new", keywordExact = 3, numResults = 1),
+                   label = "keywordsExact must be 0 or 1 or T/F")
+    
+    c_exact <- clcolors(set = "new", numResults = 5,
+                        keywords = "fun", keywordExact = TRUE)
+    expect_equal(length(c_exact), 5, label = "keywordsExact TRUE works")
+    
+    c_not_exact <- clcolors(set = "new", numResults = 5,
+                            keywords = "fun", keywordExact = FALSE)
+    expect_equal(length(c_not_exact), 5, label = "keywordsExact FALSE works")
+  })
+})
+
+with_mock_api({
+  test_that("Printing works", {
+    c_single <- clcolor("f06134")
+    c_single_output <- capture.output(c_single)
+    
+    expect_equal(length(c_single_output), 13,
+                 label = "(single) print output is correct length")
+    expect_match(c_single_output[1], "Pattern ID:",
+                 label = "(single) pattern ID is first")
+    expect_match(c_single_output[12], "Colors:",
+                 label = "(single) color is last")
+    
+    c_multiple <- clcolors(set = "new", numResults = 2)
+    c_multiple_output <- capture.output(c_multiple)
+    
+    expect_equal(length(c_multiple_output), 26,
+                 label = "(multiple) print output is correct length")
+    expect_match(c_multiple_output[1], "Pattern ID:",
+                 label = "(multiple; first color) pattern ID is first")
+    expect_match(c_multiple_output[12], "Colors:",
+                 label = "(multiple; first color) color is last")
+    expect_match(c_multiple_output[14], "Pattern ID:",
+                 label = "(multiple; second color) pattern ID is first")
   })
 })

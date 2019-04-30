@@ -1,7 +1,9 @@
 context("Warnings and errors")
 
-test_that("Incorrect API types are caught", {
-  expect_warning(clquery(type = "junk"))
+with_mock_api({
+  test_that("Incorrect API types are caught", {
+    expect_warning(clquery(type = "junk"))
+  })
 })
 
 with_mock_api({
