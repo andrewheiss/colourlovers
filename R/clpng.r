@@ -52,7 +52,7 @@ clpng <- function(x, ask = TRUE, ...) {
         else
             par(mar = c(1, 1, 2, 1))
     } else if (s2) {
-        if (inherits(x, 'clpalette'))
+        if (inherits(x, 'clpalettes'))
             par(mar = c(2, 1, 2, 1), ask = ask)
         else
             par(mar = c(1, 1, 2, 1), ask = ask)
