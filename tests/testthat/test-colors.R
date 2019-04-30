@@ -112,15 +112,15 @@ with_mock_api({
 with_mock_api({
   test_that("Keyword exactness works", {
     expect_warning(clcolors(set = "new", keywordExact = 3, numResults = 1),
-                   label = "keywordsExact must be 0 or 1 or T/F")
+                   label = "keywordExact must be 0 or 1 or T/F")
     
     c_exact <- clcolors(set = "new", numResults = 5,
                         keywords = "fun", keywordExact = TRUE)
-    expect_equal(length(c_exact), 5, label = "keywordsExact TRUE works")
+    expect_equal(length(c_exact), 5, label = "keywordExact TRUE works")
     
     c_not_exact <- clcolors(set = "new", numResults = 5,
                             keywords = "fun", keywordExact = FALSE)
-    expect_equal(length(c_not_exact), 5, label = "keywordsExact FALSE works")
+    expect_equal(length(c_not_exact), 5, label = "keywordExact FALSE works")
   })
 })
 
