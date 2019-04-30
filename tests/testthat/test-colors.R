@@ -149,3 +149,22 @@ with_mock_api({
                  label = "(multiple; second color) pattern ID is first")
   })
 })
+
+with_mock_api({
+  test_that("Swatch functions work", {
+    c_single <- clcolor("f06134")
+    c_multiple <- clcolors(set = "new", numResults = 2)
+    
+    expect_equal(length(swatch(c_single)), 1,
+                 label = "one item is returned")
+    expect_equal(substr(swatch(c_single)[[1]], 1, 1), "#",
+                 label = "hex codes start with #")
+    
+    expect_equal(length(swatch(c_multiple)), 2,
+                 label = "two items are returned")
+    expect_equal(substr(swatch(c_multiple)[[1]], 1, 1), "#",
+                 label = "first hex code starts with #")
+    expect_equal(substr(swatch(c_multiple)[[2]], 1, 1), "#",
+                 label = "second hex code starts with #")
+  })
+})
