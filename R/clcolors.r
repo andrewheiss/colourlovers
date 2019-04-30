@@ -79,8 +79,8 @@ clcolors <- function(set = NULL, ..., fmt = 'xml') {
         return(out)
     } else {
         query <- query[!sapply(query, is.null)]
-        allowed <- c('lover','hueRange','briRange','keywords',
-                     'keywordExact','orderCol','sortBy','numResults',
+        allowed <- c('lover', 'hueRange', 'briRange', 'keywords',
+                     'keywordExact', 'orderCol', 'sortBy', 'numResults',
                      'resultOffset')
         query[which(!names(query) %in% allowed)] <- NULL
         n <- names(query)
