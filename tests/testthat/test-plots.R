@@ -47,6 +47,9 @@ with_mock_api({
                                                              numResults = 1), 
                                                   ask = FALSE, pie = TRUE)
     vdiffr::expect_doppelganger("multiple palette pie charts", disp_multiple_pie_palettes)
+    
+    disp_small_palette <- function() plot(clpalette("4643793"))
+    vdiffr::expect_doppelganger("single small palette plot", disp_small_palette)
   })
 })
 

@@ -77,7 +77,7 @@ clpng <- function(x, ask = TRUE, ...) {
     rasterImage(readPNG(tmp), 1, 1, 2, 2)
     
     if (inherits(x, 'clpalette')) {
-        axis(1, seq(1, 2, length.out = 5), unlist(x$colors))
+        axis(1, seq(1, 2, length.out = length(unlist(x$colors))), unlist(x$colors))
     }
     file.remove(tmp)
     

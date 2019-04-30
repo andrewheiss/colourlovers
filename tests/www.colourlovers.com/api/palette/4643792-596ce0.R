@@ -1,19 +1,19 @@
 structure(list(url = "http://www.colourlovers.com/api/palette/4643792?format=xml&widths=0", 
-    status_code = 200L, headers = structure(list(date = "Tue, 30 Apr 2019 20:02:09 GMT", 
+    status_code = 200L, headers = structure(list(date = "Tue, 30 Apr 2019 20:18:03 GMT", 
         server = "Apache/2.2.22 (Ubuntu)", connection = "Close", 
         vary = "Accept-Encoding", `content-encoding` = "gzip", 
-        `content-length` = "446", `content-type` = "text/xml; charset=utf-8"), class = c("insensitive", 
+        `content-length` = "447", `content-type` = "text/xml; charset=utf-8"), class = c("insensitive", 
     "list")), all_headers = list(list(status = 200L, version = "HTTP/1.1", 
-        headers = structure(list(date = "Tue, 30 Apr 2019 20:02:09 GMT", 
+        headers = structure(list(date = "Tue, 30 Apr 2019 20:18:03 GMT", 
             server = "Apache/2.2.22 (Ubuntu)", connection = "Close", 
             vary = "Accept-Encoding", `content-encoding` = "gzip", 
-            `content-length` = "446", `content-type` = "text/xml; charset=utf-8"), class = c("insensitive", 
+            `content-length` = "447", `content-type` = "text/xml; charset=utf-8"), class = c("insensitive", 
         "list")))), cookies = structure(list(domain = logical(0), 
         flag = logical(0), path = logical(0), secure = logical(0), 
         expiration = structure(numeric(0), class = c("POSIXct", 
         "POSIXt")), name = logical(0), value = logical(0)), row.names = integer(0), class = "data.frame"), 
-    content = charToRaw("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<palettes numResults=\"1\" totalResults=\"4643792\">\n\t<palette>\n\t\t<id>4643792</id>\n\t\t<title><![CDATA[ath palette 1]]></title>\n\t\t<userName><![CDATA[andrewheiss]]></userName>\n\t\t<numViews>4</numViews>\n\t\t<numVotes>0</numVotes>\n\t\t<numComments>0</numComments>\n\t\t<numHearts>0</numHearts>\n\t\t<rank>0</rank>\n\t\t<dateCreated>2019-04-30 14:55:00</dateCreated>\n\t\t<colors>\n\t\t\t<hex>C37CA1</hex>\n\t\t\t<hex>3AA418</hex>\n\t\t\t<hex>352E34</hex>\n\t\t\t<hex>A3DE22</hex>\n\t\t\t<hex>199A9D</hex>\n\t\t</colors>\n\t\t<description><![CDATA[]]></description>\n\t\t<url><![CDATA[http://www.colourlovers.com/palette/4643792/ath_palette_1]]></url>\n\t\t<imageUrl><![CDATA[http://www.colourlovers.com/paletteImg/C37CA1/3AA418/352E34/A3DE22/199A9D/ath_palette_1.png]]></imageUrl>\n\t\t<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/p/4643/4643792_ath_palette_1.png]]></badgeUrl>\n\t\t<apiUrl>http://www.colourlovers.com/api/palette/4643792</apiUrl>\n\t</palette>\n</palettes>"), 
-    date = structure(1556654529, class = c("POSIXct", "POSIXt"
-    ), tzone = "GMT"), times = c(redirect = 0, namelookup = 1.9e-05, 
-    connect = 0.12499, pretransfer = 0.12512, starttransfer = 0.293616, 
-    total = 0.293701)), class = "response")
+    content = charToRaw("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<palettes numResults=\"1\" totalResults=\"4643793\">\n\t<palette>\n\t\t<id>4643792</id>\n\t\t<title><![CDATA[ath palette 1]]></title>\n\t\t<userName><![CDATA[andrewheiss]]></userName>\n\t\t<numViews>9</numViews>\n\t\t<numVotes>0</numVotes>\n\t\t<numComments>0</numComments>\n\t\t<numHearts>0</numHearts>\n\t\t<rank>0</rank>\n\t\t<dateCreated>2019-04-30 14:55:00</dateCreated>\n\t\t<colors>\n\t\t\t<hex>C37CA1</hex>\n\t\t\t<hex>3AA418</hex>\n\t\t\t<hex>352E34</hex>\n\t\t\t<hex>A3DE22</hex>\n\t\t\t<hex>199A9D</hex>\n\t\t</colors>\n\t\t<description><![CDATA[]]></description>\n\t\t<url><![CDATA[http://www.colourlovers.com/palette/4643792/ath_palette_1]]></url>\n\t\t<imageUrl><![CDATA[http://www.colourlovers.com/paletteImg/C37CA1/3AA418/352E34/A3DE22/199A9D/ath_palette_1.png]]></imageUrl>\n\t\t<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/p/4643/4643792_ath_palette_1.png]]></badgeUrl>\n\t\t<apiUrl>http://www.colourlovers.com/api/palette/4643792</apiUrl>\n\t</palette>\n</palettes>"), 
+    date = structure(1556655483, class = c("POSIXct", "POSIXt"
+    ), tzone = "GMT"), times = c(redirect = 0, namelookup = 0.000021, 
+    connect = 0.172834, pretransfer = 0.172975, starttransfer = 0.378774, 
+    total = 0.378932)), class = "response")
