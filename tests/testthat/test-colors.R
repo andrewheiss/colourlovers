@@ -34,21 +34,21 @@ with_mock_api({
 
 with_mock_api({
   test_that("Extra parameters for random colors are caught", {
-    expect_success(expect_warning(clcolors(set = "random", lover = "junk"),
-                                  label = "no parameters allowed when getting random color"))
+    expect_warning(clcolors(set = "random", lover = "junk"),
+                   label = "no parameters allowed when getting random color")
   })
 })
 
 with_mock_api({
   test_that("Hue range works", {
-    expect_success(expect_error(clcolors(set = "new", hueRange = c(5, 3, 2)), 
-                                label = "more than three hue bounds breaks"))
-    expect_success(expect_error(clcolors(set = "new", hueRange = 3),
-                                label = "one hue bound breaks"))
-    expect_success(expect_error(clcolors(set = "new", hueRange = c(-5, 50)),
-                                label = "negative lower hue bound breaks"))
-    expect_success(expect_error(clcolors(set = "new", hueRange = c(20, 500)),
-                                label = "high upper hue bound breaks"))
+    expect_error(clcolors(set = "new", hueRange = c(5, 3, 2)), 
+                 label = "more than three hue bounds breaks")
+    expect_error(clcolors(set = "new", hueRange = 3),
+                 label = "one hue bound breaks")
+    expect_error(clcolors(set = "new", hueRange = c(-5, 50)),
+                 label = "negative lower hue bound breaks")
+    expect_error(clcolors(set = "new", hueRange = c(20, 500)),
+                 label = "high upper hue bound breaks")
     
     c_hues <- clcolors(set = "new", hueRange = c(20, 50), numResults = 5)
     c_hue_values <- sapply(c_hues, function(x) as.numeric(x$hsv$hue))
@@ -59,14 +59,14 @@ with_mock_api({
 
 with_mock_api({
   test_that("Brightness range works", {
-    expect_success(expect_error(clcolors(set = "new", briRange = c(5, 3, 2)), 
-                                label = "more than three brightness bounds breaks"))
-    expect_success(expect_error(clcolors(set = "new", briRange = 3),
-                                label = "one brightness bound breaks"))
-    expect_success(expect_error(clcolors(set = "new", briRange = c(-5, 50)),
-                                label = "negative lower brightness bound breaks"))
-    expect_success(expect_error(clcolors(set = "new", briRange = c(20, 105)),
-                                label = "high upper brightness bound breaks"))
+    expect_error(clcolors(set = "new", briRange = c(5, 3, 2)), 
+                 label = "more than three brightness bounds breaks")
+    expect_error(clcolors(set = "new", briRange = 3),
+                 label = "one brightness bound breaks")
+    expect_error(clcolors(set = "new", briRange = c(-5, 50)),
+                 label = "negative lower brightness bound breaks")
+    expect_error(clcolors(set = "new", briRange = c(20, 105)),
+                 label = "high upper brightness bound breaks")
     
     c_bri <- clcolors(set = "new", briRange = c(10, 30), numResults = 5)
     c_bri_values <- sapply(c_bri, function(x) as.numeric(x$hsv$value))
