@@ -1,6 +1,6 @@
 Package: colourlovers
-Version: 0.3.0
-Date: 2019-04-28
+Version: 0.3.5
+Date: 2019-04-30
 Title: R Client for the COLOURlovers API
 Authors@R: c(person("Andrew", "Heiss",
                     role = c("aut", "cre"),
