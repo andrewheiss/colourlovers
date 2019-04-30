@@ -9,9 +9,8 @@
 #' @param fmt A format for the API response, one of \dQuote{xml} (the default)
 #'   or \dQuote{json}. This has essentially no effect on function behavior.
 #' 
-#' @return A list of class \dQuote{clstats} containing at least one named
-#'   element (\dQuote{total}). This should be the same regardless of the value 
-#'   of \code{fmt}.
+#' @return A numeric value of class \dQuote{clstats}. This should be the same 
+#'   regardless of the value of \code{fmt}.
 #' 
 #' @export
 #' 
@@ -28,7 +27,7 @@
 #' }
 clstats <- function(type, fmt = 'xml') {
     type <- match.arg(type, c('colors', 'palettes', 'patterns', 'lovers'))
-    out <- clquery('stats', type, fmt = fmt)
+    out <- as.numeric(unlist(clquery('stats', type, fmt = fmt)))
     class(out) <- c('clstats', class(out))
     attr(out, 'clstat_type') <- type
     return(out)
@@ -36,5 +35,5 @@ clstats <- function(type, fmt = 'xml') {
 
 #' @export
 print.clstats <- function(x, ...) {
-    cat('Total ', attr(x, 'clstat_type'), ': ', attr(x, 'total'), '\n', sep = '')
+    cat('Total ', attr(x, 'clstat_type'), ': ', x, '\n', sep = '')
 }

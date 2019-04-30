@@ -21,10 +21,10 @@
 clquery <- function(type, set = NULL, query = NULL, fmt = 'xml', ...) {
     # API workhorse query function
     if (!type %in% c('color', 'colors',
-                    'palette', 'palettes',
-                    'pattern', 'patterns',
-                    'lover', 'lovers',
-                    'stats'))
+                     'palette', 'palettes',
+                     'pattern', 'patterns',
+                     'lover', 'lovers',
+                     'stats'))
         warning("API type not recognized")
     
     # Build URL query
@@ -50,7 +50,7 @@ clquery <- function(type, set = NULL, query = NULL, fmt = 'xml', ...) {
 
     # Make actual HTTP call
     response <- GET(url)
-    
+
     # Handle json or xml response
     if (fmt == 'xml') {
         p <- xmlParse(response, options = XML::NOCDATA)

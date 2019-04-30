@@ -15,9 +15,8 @@ clstats(type, fmt = "xml")
 or \dQuote{json}. This has essentially no effect on function behavior.}
 }
 \value{
-A list of class \dQuote{clstats} containing at least one named
-  element (\dQuote{total}). This should be the same regardless of the value 
-  of \code{fmt}.
+A numeric value of class \dQuote{clstats}. This should be the same 
+  regardless of the value of \code{fmt}.
 }
 \description{
 Retrieve basic statistics from the COLOURlovers API.
