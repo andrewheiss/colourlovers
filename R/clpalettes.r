@@ -23,7 +23,7 @@
 #'         will only return palettes with all requested colors.
 #'   \item \code{keywords}: A character string containing one or more keywords to
 #'         search by.
-#'   \item \code{keywordsExact}: A boolean indicating search on keywords should be
+#'   \item \code{keywordExact}: A boolean indicating search on keywords should be
 #'         exact (\code{TRUE}) or not (\code{FALSE}, the API default).
 #'   \item \code{orderCol}: A character string containing a sort criterion. One of
 #'         \dQuote{dateCreated}, \dQuote{score}, \dQuote{name}, \dQuote{numVotes},
@@ -41,7 +41,7 @@
 #'   \dQuote{new}, \dQuote{top}, and \dQuote{random}.
 #' @param ... A named list of parameters passed to the API request. Allowed
 #'   parameters are \code{lover}, \code{hueOption}, \code{hex}, \code{hex_logic},
-#'   \code{keywords}, \code{keywordsExact}, \code{orderCol}, \code{sortBy},
+#'   \code{keywords}, \code{keywordExact}, \code{orderCol}, \code{sortBy},
 #'   \code{numResults}, and \code{resultOffset}. Specifying \code{orderCol}
 #'   overrules any argument to \code{set}. See details.
 #' @param fmt A format for the API response, one of \dQuote{xml} (the default)
@@ -90,15 +90,25 @@ clpalettes <- function(set = NULL, ..., fmt = 'xml') {
         return(out)
     } else {
         query <- query[!sapply(query, is.null)]
-        allowed <- c('lover','hueOption','hex','hex_logic','keywords',
-                     'keywordsExact','orderCol','sortBy','numResults',
+        allowed <- c('lover', 'hueOption', 'hex', 'hex_logic', 'keywords',
+                     'keywordExact', 'orderCol', 'sortBy', 'numResults',
                      'resultOffset', 'showPaletteWidths')
         query[which(!names(query) %in% allowed)] <- NULL
         n <- names(query)
         
         if ('hueOption' %in% n) {
-            cols <- c('red','orange','yellow','green',
-                      'aqua','blue','violet','fuchsia')
+            cols <- c('red', 'orange', 'yellow', 'green',
+                      'aqua', 'blue', 'violet', 'fuchsia')
+            
+            extra_cols <- query$hueOption[!query$hueOption %in% cols]
+            
+            if (length(extra_cols > 0)) {
+                warning(paste0("These colors will be ignored: ", 
+                               paste(extra_cols, collapse = ", "), 
+                               ".\nThe only allowed colors are ", 
+                               paste(cols, collapse = ", ")))
+            }
+
             query$hueOption <- query$hueOption[query$hueOption %in% cols]
             query$hueOption <- paste(query$hueOption, sep = ',')
         }
@@ -112,7 +122,7 @@ clpalettes <- function(set = NULL, ..., fmt = 'xml') {
             }
             query$hex <- paste(substring(gsub('#', '', query$hex), 1, 6), sep = ',')
         }
-        if('hex_logic' %in% n) {
+        if ('hex_logic' %in% n) {
             query$hex_logic <- toupper(query$hex_logic)
             if (!query$hex_logic %in% c('AND', 'OR')) {
                 warning('hex_logic must be AND | OR; AND used by default')
@@ -156,7 +166,7 @@ clpalettes <- function(set = NULL, ..., fmt = 'xml') {
         
         out <- clquery('palettes', set, query = query, fmt = fmt)
     }
-    
+
     class(out) <- c('clpalettes', class(out))
     
     for (i in 1:length(out)) {
