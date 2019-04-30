@@ -17,7 +17,7 @@ clcolor(hex, fmt = "xml")
 
 \item{...}{A named list of parameters passed to the API request. Allowed
 parameters are \code{lover}, \code{hueRange}, \code{briRange},
-\code{keywords}, \code{keywordsExact}, \code{orderCol}, \code{sortBy},
+\code{keywords}, \code{keywordExact}, \code{orderCol}, \code{sortBy},
 \code{numResults}, and \code{resultOffset}. Specifying \code{orderCol}
 overrules any argument to \code{set}. See details.}
 
