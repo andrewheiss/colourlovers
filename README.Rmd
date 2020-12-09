@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 [![codecov.io](https://codecov.io/github/andrewheiss/colourlovers/coverage.svg?branch=master)](https://codecov.io/github/andrewheiss/colourlovers?branch=master)
 
 
-The **colourlovers** package connects R to the [COLOURlovers](http://www.colourlovers.com/) API. COLOURlovers is a social networking site for sharing colors, color palettes, and color-rich visual designs. The social networking features of the site mean that COLOURlovers provides not only rich, original color palettes to use in R graphics but also provides ratings and community evaluations of those palettes, helping R graphics designers to utilize visually pleasing color combinations.
+The **colourlovers** package connects R to the [COLOURlovers](https://www.colourlovers.com/) API. COLOURlovers is a social networking site for sharing colors, color palettes, and color-rich visual designs. The social networking features of the site mean that COLOURlovers provides not only rich, original color palettes to use in R graphics but also provides ratings and community evaluations of those palettes, helping R graphics designers to utilize visually pleasing color combinations.
 
 
 ## Installation
@@ -187,9 +187,9 @@ plot(clpattern('1451'), type = 'pie')
 
 ## License
 
-The **colourlovers** package is released under GPL-2, while the COLOURlovers community-generated data returned by the API is available under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/) license.
+The **colourlovers** package is released under GPL-2, while the COLOURlovers community-generated data returned by the API is available under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) license.
 
 
 ## Community guidelines
 
-Please note that the 'colourlovers' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+Please note that the 'colourlovers' project is released with a [Contributor Code of Conduct](https://github.com/andrewheiss/colourlovers/blob/master/CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.

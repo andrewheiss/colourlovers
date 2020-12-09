@@ -10,7 +10,7 @@ Status](https://travis-ci.org/andrewheiss/colourlovers.png?branch=master)](https
 [![codecov.io](https://codecov.io/github/andrewheiss/colourlovers/coverage.svg?branch=master)](https://codecov.io/github/andrewheiss/colourlovers?branch=master)
 
 The **colourlovers** package connects R to the
-[COLOURlovers](http://www.colourlovers.com/) API. COLOURlovers is a
+[COLOURlovers](https://www.colourlovers.com/) API. COLOURlovers is a
 social networking site for sharing colors, color palettes, and
 color-rich visual designs. The social networking features of the site
 mean that COLOURlovers provides not only rich, original color palettes
@@ -83,8 +83,8 @@ Note that the `clcolor()`, `clcolors()`, `clpalette()`, `clpalettes()`,
 `clpattern()`, and `clpatterns()` functions all have S3 `plot()`
 methods. These methods produce either simple plots of colors, palettes,
 and patterns using `rasterImage()` (and the `png::readPNG()` function)
-or a pie chart of the returned color values (e.g., `plot(obj, type =
-'pie')`).
+or a pie chart of the returned color values (e.g.,
+`plot(obj, type = 'pie')`).
 
 Additionally the `swatch` function extracts colors returned by any of
 those functions to make them easily usable in subsequent graphics calls.
@@ -116,8 +116,8 @@ clcolors('top')[[1]]
 #> Title:           Black 
 #> Created by user: ninjascience 
 #> Date created:    2004-12-17 08:36:26 
-#> Views:           147150 
-#> Votes:           1511 
+#> Views:           150348 
+#> Votes:           1523 
 #> Comments:        1788 
 #> Hearts:          4.5 
 #> Rank:            1 
@@ -136,7 +136,7 @@ clcolor('6B4106')
 #> Title:           wet dirt 
 #> Created by user: jessicabrown 
 #> Date created:    2008-03-17 11:22:21 
-#> Views:           557 
+#> Views:           606 
 #> Votes:           1 
 #> Comments:        0 
 #> Hearts:          0 
@@ -156,7 +156,7 @@ clcolor(hsv(.5, .5, .5))
 #> Title:           H, S & B 
 #> Created by user: serafim 
 #> Date created:    2005-12-15 08:07:52 
-#> Views:           583 
+#> Views:           628 
 #> Votes:           5 
 #> Comments:        4 
 #> Hearts:          0 
@@ -169,8 +169,8 @@ clcolor(rgb(0, 1, 0, .5))
 #> Title:           Primary Green 
 #> Created by user: il morto 
 #> Date created:    2005-07-04 09:53:05 
-#> Views:           4396 
-#> Votes:           61 
+#> Views:           4645 
+#> Votes:           62 
 #> Comments:        32 
 #> Hearts:          0 
 #> Rank:            522 
@@ -182,8 +182,8 @@ clcolor(gray(.5))
 #> Title:           917~choice grey 
 #> Created by user: DESIGNJUNKEE 
 #> Date created:    2005-08-29 11:30:26 
-#> Views:           7963 
-#> Votes:           45 
+#> Views:           8178 
+#> Votes:           46 
 #> Comments:        16 
 #> Hearts:          5 
 #> Rank:            722 
@@ -256,7 +256,7 @@ clpatterns('top')[[1]]
 #> Title:           0479 
 #> Created by user: as warning 
 #> Date created:    2014-07-06 03:13:02 
-#> Views:           3130 
+#> Views:           4346 
 #> Votes:           16777215 
 #> Comments:        0 
 #> Hearts:          0 
@@ -306,12 +306,12 @@ plot(clpattern('1451'), type = 'pie')
 
 The **colourlovers** package is released under GPL-2, while the
 COLOURlovers community-generated data returned by the API is available
-under the [Creative Commons
-Attribution-NonCommercial-ShareAlike 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/)
-license.
+under the [Creative Commons Attribution-NonCommercial-ShareAlike
+3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) license.
 
 ## Community guidelines
 
 Please note that the ‘colourlovers’ project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
-this project, you agree to abide by its terms.
+[Contributor Code of
+Conduct](https://github.com/andrewheiss/colourlovers/blob/master/CODE_OF_CONDUCT.md).
+By contributing to this project, you agree to abide by its terms.
