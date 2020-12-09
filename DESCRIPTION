@@ -22,7 +22,7 @@ Suggests:
     httptest,
     testthat,
     vdiffr
-Description: Provides access to the COLOURlovers <http://www.colourlovers.com/>
+Description: Provides access to the COLOURlovers <https://www.colourlovers.com/>
     API, which offers color inspiration and color palettes.
 License: GPL-2
 URL: https://github.com/andrewheiss/colourlovers
