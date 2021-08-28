@@ -15,7 +15,7 @@
 #' @importFrom XML xmlToList htmlTreeParse NOCDATA
 #' @importFrom graphics axis par pie plot rasterImage
 #' @importFrom utils download.file
-#' @importFrom httr GET content
+#' @importFrom httr GET content add_headers
 #' 
 #' @keywords package
 NULL
