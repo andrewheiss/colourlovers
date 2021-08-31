@@ -58,7 +58,6 @@ clquery <- function(type, set = NULL, query = NULL, fmt = 'xml', ...) {
     ))
     # Handle json or xml response
     if (fmt == 'xml') {
-        str(response)
         p <- xmlParse(response, options = XML::NOCDATA)
         out <- xmlToList(p, addAttributes = FALSE)
     } else if (fmt == 'json') {
