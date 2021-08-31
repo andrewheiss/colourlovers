@@ -49,12 +49,12 @@ clquery <- function(type, set = NULL, query = NULL, fmt = 'xml', ...) {
     url <- paste(url, query, sep = "&")
 
     # Make actual HTTP call
-    response <- GET(url, httr::add_headers(
+    response <- httr::GET(url, httr::add_headers(
         Connection = "keep-alive",
         "Cache-Control" = "max-age=0",
         DNT = "1",
         "User-Agent" = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0",
-        "Accept-Language" = "en-US,en;q=0.9,da;q=0.8,sv;q=0.7",
+        "Accept-Language" = "en-US,en;q=0.9,da;q=0.8,sv;q=0.7"
     ))
     # Handle json or xml response
     if (fmt == 'xml') {
