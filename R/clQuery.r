@@ -28,7 +28,7 @@ clquery <- function(type, set = NULL, query = NULL, fmt = 'xml', ...) {
         warning("API type not recognized")
     
     # Build URL query
-    url <- paste('http://www.colourlovers.com/api/', type, sep = "")
+    url <- paste('https://www.colourlovers.com/api/', type, sep = "")
     
     # Add set if present (new, top, random)
     if (!is.null(set)) {
