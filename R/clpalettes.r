@@ -192,6 +192,9 @@ clpalette <- function(id, widths = FALSE, fmt = 'xml') {
 
 #' @export
 print.clpalette <- function(x, ...) {
+    if (substr(x$url, 1, 5) == "http:") {
+	x$url = paste0("https:", substring(x$url, 6))
+    }
     cat('Palette ID:     ', x$id, '\n')
     cat('Title:          ', x$title, '\n')
     #cat('Description:    ', x$description,'\n')
